@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.tsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -28601,9 +28601,9 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./src/components/app.jsx":
+/***/ "./src/components/app.tsx":
 /*!********************************!*\
-  !*** ./src/components/app.jsx ***!
+  !*** ./src/components/app.tsx ***!
   \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -28612,10 +28612,10 @@ if (false) {} else {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _footer_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer.jsx */ "./src/components/footer.jsx");
-/* harmony import */ var _filter_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filter.jsx */ "./src/components/filter.jsx");
-/* harmony import */ var _todolist_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todolist.jsx */ "./src/components/todolist.jsx");
-/* harmony import */ var _const_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../const.js */ "./src/const.js");
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./src/components/footer.tsx");
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filter */ "./src/components/filter.tsx");
+/* harmony import */ var _todolist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todolist */ "./src/components/todolist.tsx");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28643,9 +28643,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+;
 
-var App = /*#__PURE__*/function (_PureComponent) {
-  _inherits(App, _PureComponent);
+var App = /*#__PURE__*/function (_React$PureComponent) {
+  _inherits(App, _React$PureComponent);
 
   var _super = _createSuper(App);
 
@@ -28658,7 +28659,7 @@ var App = /*#__PURE__*/function (_PureComponent) {
     _this.state = {
       todoTasks: _this.props.todoTasks,
       isAllChecked: false,
-      activeFilter: _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ALL,
+      activeFilter: _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ALL,
       currentTask: null,
       newTask: null
     };
@@ -28684,42 +28685,42 @@ var App = /*#__PURE__*/function (_PureComponent) {
           activeFilter = _this$state.activeFilter,
           newTask = _this$state.newTask;
       var countOfActiveTasks = todoTasks.filter(function (todo) {
-        return todo.status === _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE;
+        return todo.status === _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE;
       }).length;
-      var tasksOfActiveFilter = activeFilter === _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ALL ? todoTasks : todoTasks.filter(function (todo) {
+      var tasksOfActiveFilter = activeFilter === _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ALL ? todoTasks : todoTasks.filter(function (todo) {
         return todo.status === activeFilter;
       });
       var isCompletedTasks = todoTasks.filter(function (todo) {
-        return todo.status === _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
+        return todo.status === _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
       }).length > 0;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "todos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h1", null, "todos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         type: "checkbox",
         checked: isAllChecked,
         onChange: this._handleCheckedAllTasksClick
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         placeholder: "What needs to be done?",
         onKeyDown: this._handleNewTaskEnterDown,
         onChange: this._handleNewTaskChange,
         value: newTask ? newTask.task : ""
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todolist_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todolist__WEBPACK_IMPORTED_MODULE_3__["default"], {
         todoTasks: tasksOfActiveFilter,
         onTaskChecked: this._handleTaskChecked,
         onTaskChange: this._handleTaskChange,
         onTaskKeyDown: this._handleTaskKeyDown,
         onDeleteButtonClick: this._handleDeleteButtonClick,
         onTaskBlur: this._handleTaskBlur
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, countOfActiveTasks), " ", countOfActiveTasks === 1 ? "item" : "items", " left", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_filter_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, countOfActiveTasks), " ", countOfActiveTasks === 1 ? "item" : "items", " left", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
         activeFilter: activeFilter,
         onFilterClick: this._handleFilterClick
-      }), isCompletedTasks ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }), isCompletedTasks ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
         href: "#",
         onClick: this._handleClearCompletedClick
-      }, "Clear completed")) : ""), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      }, "Clear completed")) : ""), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }, {
     key: "changeTaskStatus",
     value: function changeTaskStatus(task) {
-      var newStatus = task.status === _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED ? _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE : _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
+      var newStatus = task.status === _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED ? _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE : _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
       var newTask = Object.assign({}, task, {
         status: newStatus
       });
@@ -28772,8 +28773,6 @@ var App = /*#__PURE__*/function (_PureComponent) {
   }, {
     key: "_handleTaskBlur",
     value: function _handleTaskBlur(todo) {
-      console.log(1);
-
       this._handleTaskChange(todo.id, todo.task);
     }
   }, {
@@ -28789,7 +28788,7 @@ var App = /*#__PURE__*/function (_PureComponent) {
       var _this$state2 = this.state,
           todoTasks = _this$state2.todoTasks,
           isAllChecked = _this$state2.isAllChecked;
-      var newStatus = isAllChecked ? _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE : _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
+      var newStatus = isAllChecked ? _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE : _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
       var newTodoTasks = todoTasks.map(function (todo) {
         return Object.assign({}, todo, {
           status: newStatus
@@ -28805,7 +28804,7 @@ var App = /*#__PURE__*/function (_PureComponent) {
     value: function _handleClearCompletedClick() {
       var todoTasks = this.state.todoTasks;
       var newTodoTasks = todoTasks.filter(function (todo) {
-        return todo.status === _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE;
+        return todo.status === _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE;
       });
       this.setState({
         todoTasks: newTodoTasks,
@@ -28836,7 +28835,7 @@ var App = /*#__PURE__*/function (_PureComponent) {
         newTask: {
           id: todoTasks.length + 1,
           task: evt.target.value,
-          status: _const_js__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE
+          status: _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE
         }
       });
     }
@@ -28860,9 +28859,9 @@ var App = /*#__PURE__*/function (_PureComponent) {
 
 /***/ }),
 
-/***/ "./src/components/filter.jsx":
+/***/ "./src/components/filter.tsx":
 /*!***********************************!*\
-  !*** ./src/components/filter.jsx ***!
+  !*** ./src/components/filter.tsx ***!
   \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -28871,7 +28870,7 @@ var App = /*#__PURE__*/function (_PureComponent) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
 
 
 
@@ -28879,11 +28878,11 @@ var Filter = function Filter(props) {
   var activeFilter = props.activeFilter,
       onFilterClick = props.onFilterClick;
   var allStatus = Object.values(_const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATUS"]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, allStatus.map(function (status) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", null, allStatus.map(function (status) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
       key: status,
       checked: status === activeFilter
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
       href: "#",
       onClick: function onClick() {
         return onFilterClick(status);
@@ -28896,9 +28895,9 @@ var Filter = function Filter(props) {
 
 /***/ }),
 
-/***/ "./src/components/footer.jsx":
+/***/ "./src/components/footer.tsx":
 /*!***********************************!*\
-  !*** ./src/components/footer.jsx ***!
+  !*** ./src/components/footer.tsx ***!
   \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -28910,16 +28909,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Footer = function Footer() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Double-click to edit a todo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Written by Addy Osmani"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Part of TodoMVC"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "Double-click to edit a todo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "Written by Addy Osmani"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "Part of TodoMVC"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 
-/***/ "./src/components/todoItem.jsx":
+/***/ "./src/components/todoItem.tsx":
 /*!*************************************!*\
-  !*** ./src/components/todoItem.jsx ***!
+  !*** ./src/components/todoItem.tsx ***!
   \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -28928,7 +28927,7 @@ var Footer = function Footer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28954,8 +28953,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var TodoItem = /*#__PURE__*/function (_PureComponent) {
-  _inherits(TodoItem, _PureComponent);
+var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
+  _inherits(TodoItem, _React$PureComponent);
 
   var _super = _createSuper(TodoItem);
 
@@ -28988,17 +28987,16 @@ var TodoItem = /*#__PURE__*/function (_PureComponent) {
       var _this$state = this.state,
           currentState = _this$state.currentState,
           oldTodo = _this$state.oldTodo;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
         type: "none",
         onBlur: function onBlur() {
-          console.log(2);
           onTaskBlur(todo);
 
           _this2.setState({
             currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].READ
           });
         }
-      }, currentState === _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].EDIT ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, currentState === _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].EDIT ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         type: "text",
         onChange: function onChange(evt) {
           return onTaskChange(todo.id, evt.target.value);
@@ -29012,15 +29010,15 @@ var TodoItem = /*#__PURE__*/function (_PureComponent) {
             currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].READ
           }) : "";
         }
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         type: "checkbox",
         checked: todo.status === _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATUS"].COMPLETED,
         onChange: function onChange() {
           return onTaskChecked(todo.id);
         }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
         onDoubleClick: this._handleDoubleClickOnTask
-      }, todo.task), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, todo.task), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
         onClick: function onClick() {
           return onDeleteButtonClick(todo.id);
         }
@@ -29042,9 +29040,9 @@ var TodoItem = /*#__PURE__*/function (_PureComponent) {
 
 /***/ }),
 
-/***/ "./src/components/todolist.jsx":
+/***/ "./src/components/todolist.tsx":
 /*!*************************************!*\
-  !*** ./src/components/todolist.jsx ***!
+  !*** ./src/components/todolist.tsx ***!
   \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -29053,7 +29051,7 @@ var TodoItem = /*#__PURE__*/function (_PureComponent) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _todoItem_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todoItem.jsx */ "./src/components/todoItem.jsx");
+/* harmony import */ var _todoItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todoItem */ "./src/components/todoItem.tsx");
 
 
 
@@ -29064,8 +29062,8 @@ var TodoList = function TodoList(props) {
       onDeleteButtonClick = props.onDeleteButtonClick,
       onTaskKeyDown = props.onTaskKeyDown,
       onTaskBlur = props.onTaskBlur;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, todoTasks.map(function (todo) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todoItem_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", null, todoTasks.map(function (todo) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todoItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: todo.id,
       todo: todo,
       onTaskChange: onTaskChange,
@@ -29081,10 +29079,10 @@ var TodoList = function TodoList(props) {
 
 /***/ }),
 
-/***/ "./src/const.js":
-/*!**********************!*\
-  !*** ./src/const.js ***!
-  \**********************/
+/***/ "./src/const.tsx":
+/*!***********************!*\
+  !*** ./src/const.tsx ***!
+  \***********************/
 /*! exports provided: TASK_STATUS, TASK_STATE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29104,10 +29102,10 @@ var TASK_STATE = {
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/index.tsx":
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29117,21 +29115,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_app_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/app.jsx */ "./src/components/app.jsx");
-/* harmony import */ var _mock_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mock.js */ "./src/mock.js");
+/* harmony import */ var _components_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/app */ "./src/components/app.tsx");
+/* harmony import */ var _mock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mock */ "./src/mock.ts");
 
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_app_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  todoTasks: _mock_js__WEBPACK_IMPORTED_MODULE_3__["todoTasks"]
+react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  todoTasks: _mock__WEBPACK_IMPORTED_MODULE_3__["todoTasks"]
 }), document.querySelector("#root"));
 
 /***/ }),
 
-/***/ "./src/mock.js":
+/***/ "./src/mock.ts":
 /*!*********************!*\
-  !*** ./src/mock.js ***!
+  !*** ./src/mock.ts ***!
   \*********************/
 /*! exports provided: todoTasks */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -29139,24 +29137,24 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "todoTasks", function() { return todoTasks; });
-/* harmony import */ var _const_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const.js */ "./src/const.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ "./src/const.tsx");
 
 var todoTasks = [{
   id: 0,
   task: "First",
-  status: _const_js__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].ACTIVE
+  status: _const__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].ACTIVE
 }, {
   id: 1,
   task: "Second",
-  status: _const_js__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].COMPLETED
+  status: _const__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].COMPLETED
 }, {
   id: 2,
   task: "Third",
-  status: _const_js__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].ACTIVE
+  status: _const__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].ACTIVE
 }, {
   id: 3,
   task: "Fourth",
-  status: _const_js__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].COMPLETED
+  status: _const__WEBPACK_IMPORTED_MODULE_0__["TASK_STATUS"].COMPLETED
 }];
 
 /***/ })

@@ -1,5 +1,5 @@
-import React from "react";
-import TodoItem from "./todoItem.jsx";
+import * as React from "react";
+import TodoItem from "./todoItem";
 
 
 const TodoList = (props) => {

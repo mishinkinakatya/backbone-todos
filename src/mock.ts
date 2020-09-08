@@ -1,4 +1,4 @@
-import {TASK_STATUS} from "./const.js";
+import {TASK_STATUS} from "./const";
 
 export const todoTasks = [
     {

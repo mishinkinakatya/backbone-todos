@@ -1,8 +1,8 @@
-import React, {PureComponent} from "react";
+import * as React from "react";
 import {TASK_STATUS, TASK_STATE} from "../const";
 
 
-class TodoItem extends PureComponent {
+class TodoItem extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -21,7 +21,6 @@ class TodoItem extends PureComponent {
         return (
             <li type="none"
             onBlur={() => {
-                console.log(2)
                 onTaskBlur(todo);
                 this.setState({
                     currentState: TASK_STATE.READ,

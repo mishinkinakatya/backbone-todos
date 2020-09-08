@@ -1,17 +1,16 @@
 const path = require('path')
 
 module.exports = {
-    // devtool: 'none',
     devtool: 'source-map',
     mode: 'development',
-    entry: `./src/index.js`,
+    entry: `./src/index`,
     output: {
         filename: `bundle.js`
     },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 include: [
                     path.join(__dirname, 'src'),
                 ],
@@ -20,5 +19,8 @@ module.exports = {
                 }
             },
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     }
 };

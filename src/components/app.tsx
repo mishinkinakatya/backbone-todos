@@ -1,11 +1,20 @@
-import React, {PureComponent} from "react";
-import Footer from "./footer.jsx";
-import Filter from "./filter.jsx";
-import TodoList from "./todolist.jsx";
-import {TASK_STATUS} from "../const.js";
+import * as React from "react";
+import Footer from "./footer";
+import Filter from "./filter";
+import TodoList from "./todolist";
+import {TASK_STATUS} from "../const";
 
 
-class App extends PureComponent {
+interface StateTypes {
+    todoTasks: {}[],
+    isAllChecked: boolean,
+    activeFilter: string,
+    currentTask: object,
+    newTask: object,
+};
+
+
+class App extends React.PureComponent<StateTypes> {
     constructor(props) {
         super(props);
 
@@ -101,7 +110,6 @@ class App extends PureComponent {
     }
 
     _handleTaskBlur(todo) {
-        console.log(1)
         this._handleTaskChange(todo.id, todo.task);
     }
 
@@ -139,19 +147,19 @@ class App extends PureComponent {
         const isEnterKey = evt.key === `Enter`;
 
         const newTodoTasks = isEnterKey && newTask !== null ? [].concat(todoTasks, newTask) : todoTasks;
-        
+
         if (isEnterKey) {
             this.setState({
                 todoTasks: newTodoTasks,
                 newTask: null
             });
-        }        
+        }
     }
 
 
     _handleNewTaskChange(evt) {
         const {todoTasks} = this.state;
-        
+
         this.setState({
             newTask: {
                 id: todoTasks.length + 1,
