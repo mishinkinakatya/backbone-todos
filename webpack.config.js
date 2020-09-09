@@ -14,13 +14,19 @@ module.exports = {
                 include: [
                     path.join(__dirname, 'src'),
                 ],
-                use: {
-                    loader: "babel-loader"
-                }
+                use: "babel-loader"
             },
-        ]
-    },
-    resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-    }
-};
+            {
+                test: /\.css$/,
+                include: [
+                    path.join(__dirname, 'src'),
+                ],
+                use: ["style-loader", "css-loader"]
+            }
+            ]
+},
+resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+}
+}
+;
