@@ -2,8 +2,29 @@ import * as React from "react";
 import {TASK_STATUS, TASK_STATE} from "../const";
 
 
-class TodoItem extends React.PureComponent {
-    constructor(props) {
+interface TaskType {
+    id: number,
+    task: string,
+    status: string,
+}
+
+interface PropsTypes {
+    todo: TaskType,
+    onTaskChecked: (id: number) => void,
+    onDeleteButtonClick: (id: number) => void,
+    onTaskChange:  (id: number, taskText: string) => void,
+    onTaskKeyDown: (todo: TaskType, oldTodo: TaskType, taskKey: string) => void
+};
+
+interface StateTypes {
+    currentState: string,
+    oldTodo: TaskType,
+};
+
+class TodoItem extends React.PureComponent<PropsTypes, StateTypes> {
+    state: StateTypes;
+
+    constructor(props: PropsTypes) {
         super(props);
 
         this.state = {
@@ -15,17 +36,11 @@ class TodoItem extends React.PureComponent {
     }
 
     render() {
-        const {onTaskChecked, onDeleteButtonClick, todo, onTaskChange, onTaskKeyDown, onTaskBlur} = this.props;
+        const {onTaskChecked, onDeleteButtonClick, todo, onTaskChange, onTaskKeyDown} = this.props;
         const {currentState, oldTodo} = this.state;
 
         return (
-            <li type="none"
-            onBlur={() => {
-                onTaskBlur(todo);
-                this.setState({
-                    currentState: TASK_STATE.READ,
-                })
-            }}>
+            <li>
                 {currentState === TASK_STATE.EDIT
                     ? <div>
                         <input

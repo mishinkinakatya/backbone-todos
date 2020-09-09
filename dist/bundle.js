@@ -28618,6 +28618,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -28638,12 +28654,13 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
-;
+
 
 var App = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(App, _React$PureComponent);
@@ -28656,6 +28673,9 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     _classCallCheck(this, App);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", void 0);
+
     _this.state = {
       todoTasks: _this.props.todoTasks,
       isAllChecked: false,
@@ -28671,7 +28691,6 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     _this._handleNewTaskEnterDown = _this._handleNewTaskEnterDown.bind(_assertThisInitialized(_this));
     _this._handleDeleteButtonClick = _this._handleDeleteButtonClick.bind(_assertThisInitialized(_this));
     _this._handleTaskKeyDown = _this._handleTaskKeyDown.bind(_assertThisInitialized(_this));
-    _this._handleTaskBlur = _this._handleTaskBlur.bind(_assertThisInitialized(_this));
     _this._handleNewTaskChange = _this._handleNewTaskChange.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -28698,6 +28717,7 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
         checked: isAllChecked,
         onChange: this._handleCheckedAllTasksClick
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+        type: "text",
         placeholder: "What needs to be done?",
         onKeyDown: this._handleNewTaskEnterDown,
         onChange: this._handleNewTaskChange,
@@ -28707,10 +28727,8 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
         onTaskChecked: this._handleTaskChecked,
         onTaskChange: this._handleTaskChange,
         onTaskKeyDown: this._handleTaskKeyDown,
-        onDeleteButtonClick: this._handleDeleteButtonClick,
-        onTaskBlur: this._handleTaskBlur
+        onDeleteButtonClick: this._handleDeleteButtonClick
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, countOfActiveTasks), " ", countOfActiveTasks === 1 ? "item" : "items", " left", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        activeFilter: activeFilter,
         onFilterClick: this._handleFilterClick
       }), isCompletedTasks ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
         href: "#",
@@ -28721,10 +28739,9 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     key: "changeTaskStatus",
     value: function changeTaskStatus(task) {
       var newStatus = task.status === _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED ? _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE : _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
-      var newTask = Object.assign({}, task, {
+      return _objectSpread(_objectSpread({}, task), {}, {
         status: newStatus
       });
-      return newTask;
     }
   }, {
     key: "_handleTaskChecked",
@@ -28733,10 +28750,15 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
       var todo = todoTasks.find(function (todoTask) {
         return todoTask.id === id;
       });
+
+      if (todo == undefined) {
+        throw new Error("InvalidProgramState");
+      }
+
       var todoIndex = todoTasks.findIndex(function (todoTask) {
         return todoTask.id === id;
       });
-      var newTodoTasks = [].concat(todoTasks.slice(0, todoIndex), this.changeTaskStatus(todo), todoTasks.slice(todoIndex + 1));
+      var newTodoTasks = [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [this.changeTaskStatus(todo)], _toConsumableArray(todoTasks.slice(todoIndex + 1)));
       this.setState({
         todoTasks: newTodoTasks
       });
@@ -28751,10 +28773,16 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
       var todoIndex = todoTasks.findIndex(function (todoTask) {
         return todoTask.id === id;
       });
-      var newTask = Object.assign({}, todo, {
+
+      if (todo == undefined) {
+        throw new Error("InvalidProgramState");
+      }
+
+      var newTask = _objectSpread(_objectSpread({}, todo), {}, {
         task: taskText
       });
-      var newTodoTasks = [].concat(todoTasks.slice(0, todoIndex), newTask, todoTasks.slice(todoIndex + 1));
+
+      var newTodoTasks = [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1)));
       this.setState({
         todoTasks: newTodoTasks
       });
@@ -28764,16 +28792,19 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     value: function _handleTaskKeyDown(todo, oldTodo, taskKey) {
       var isEnterKey = taskKey === "Enter";
       var isEscKey = taskKey === "Esc" || taskKey === "Escape";
-      var newCurrentTask = isEscKey && oldTodo || isEnterKey && todo;
+      var newCurrentTask;
 
-      if (isEnterKey || isEscKey) {
+      if (isEscKey) {
+        newCurrentTask = oldTodo;
+      }
+
+      if (isEnterKey) {
+        newCurrentTask = todo;
+      }
+
+      if (newCurrentTask != undefined) {
         this._handleTaskChange(todo.id, newCurrentTask.task);
       }
-    }
-  }, {
-    key: "_handleTaskBlur",
-    value: function _handleTaskBlur(todo) {
-      this._handleTaskChange(todo.id, todo.task);
     }
   }, {
     key: "_handleFilterClick",
@@ -28790,7 +28821,7 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
           isAllChecked = _this$state2.isAllChecked;
       var newStatus = isAllChecked ? _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].ACTIVE : _const__WEBPACK_IMPORTED_MODULE_4__["TASK_STATUS"].COMPLETED;
       var newTodoTasks = todoTasks.map(function (todo) {
-        return Object.assign({}, todo, {
+        return _objectSpread(_objectSpread({}, todo), {}, {
           status: newStatus
         });
       });
@@ -28818,7 +28849,7 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
           todoTasks = _this$state3.todoTasks,
           newTask = _this$state3.newTask;
       var isEnterKey = evt.key === "Enter";
-      var newTodoTasks = isEnterKey && newTask !== null ? [].concat(todoTasks, newTask) : todoTasks;
+      var newTodoTasks = isEnterKey && newTask !== null ? [].concat(_toConsumableArray(todoTasks), [newTask]) : todoTasks;
 
       if (isEnterKey) {
         this.setState({
@@ -28873,15 +28904,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
 
 
+;
 
 var Filter = function Filter(props) {
-  var activeFilter = props.activeFilter,
-      onFilterClick = props.onFilterClick;
+  var onFilterClick = props.onFilterClick;
   var allStatus = Object.values(_const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATUS"]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", null, allStatus.map(function (status) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
-      key: status,
-      checked: status === activeFilter
+      key: status
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
       href: "#",
       onClick: function onClick() {
@@ -28950,8 +28980,12 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+
+;
+;
 
 var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(TodoItem, _React$PureComponent);
@@ -28964,6 +28998,9 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
     _classCallCheck(this, TodoItem);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", void 0);
+
     _this.state = {
       currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].READ,
       oldTodo: Object.assign({}, _this.props.todo)
@@ -28982,21 +29019,11 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
           onDeleteButtonClick = _this$props.onDeleteButtonClick,
           todo = _this$props.todo,
           onTaskChange = _this$props.onTaskChange,
-          onTaskKeyDown = _this$props.onTaskKeyDown,
-          onTaskBlur = _this$props.onTaskBlur;
+          onTaskKeyDown = _this$props.onTaskKeyDown;
       var _this$state = this.state,
           currentState = _this$state.currentState,
           oldTodo = _this$state.oldTodo;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
-        type: "none",
-        onBlur: function onBlur() {
-          onTaskBlur(todo);
-
-          _this2.setState({
-            currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].READ
-          });
-        }
-      }, currentState === _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].EDIT ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null, currentState === _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].EDIT ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         type: "text",
         onChange: function onChange(evt) {
           return onTaskChange(todo.id, evt.target.value);
@@ -29054,14 +29081,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _todoItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todoItem */ "./src/components/todoItem.tsx");
 
 
+;
 
 var TodoList = function TodoList(props) {
   var todoTasks = props.todoTasks,
       onTaskChange = props.onTaskChange,
       onTaskChecked = props.onTaskChecked,
       onDeleteButtonClick = props.onDeleteButtonClick,
-      onTaskKeyDown = props.onTaskKeyDown,
-      onTaskBlur = props.onTaskBlur;
+      onTaskKeyDown = props.onTaskKeyDown;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", null, todoTasks.map(function (todo) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todoItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: todo.id,
@@ -29069,8 +29096,7 @@ var TodoList = function TodoList(props) {
       onTaskChange: onTaskChange,
       onTaskChecked: onTaskChecked,
       onDeleteButtonClick: onDeleteButtonClick,
-      onTaskKeyDown: onTaskKeyDown,
-      onTaskBlur: onTaskBlur
+      onTaskKeyDown: onTaskKeyDown
     });
   }));
 };

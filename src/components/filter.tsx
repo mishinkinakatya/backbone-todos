@@ -1,16 +1,21 @@
 import * as React from "react";
 import {TASK_STATUS} from "../const";
 
-const Filter = (props) => {
-    const {activeFilter, onFilterClick} = props;
+
+interface PropsTypes {
+    onFilterClick: (status: string) =>  void,
+};
+
+
+const Filter: React.FC<PropsTypes> = (props) => {
+    const {onFilterClick} = props;
     const allStatus = Object.values(TASK_STATUS);
 
     return (
         <ul>
-
             {allStatus.map((status) => {
                 return (
-                    <li key={status} checked={status === activeFilter} >
+                    <li key={status}>
                         <a href="#" onClick={() => onFilterClick(status)}>{status}</a>
                     </li>
                 )
