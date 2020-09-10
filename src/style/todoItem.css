@@ -1,0 +1,58 @@
+.todo-item {
+    display: block;
+    width: 500px;
+    height: 35px;
+    border-bottom: gray solid 1px;
+    list-style-type: none;
+    font-size: 20px;
+}
+
+.check-button {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    color: lightgray;
+    vertical-align: bottom;
+}
+
+.label-field {
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    vertical-align: bottom;
+}
+
+.label-field-completed {
+    display: inline-block;
+    position: relative;
+    left: 10px;
+    color: darkgrey;
+    text-decoration: line-through;
+    vertical-align: bottom;
+}
+
+.delete-button {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    right: 490px;
+    color: darksalmon;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    vertical-align: bottom;
+}
+
+.edit-task {
+    width: 470px;
+    height: 31px;
+    position: relative;
+    left: 15px;
+    border: darkgray solid 1px;
+    font-size: 20px;
+    padding-left: 10px;
+    vertical-align: bottom;
+}

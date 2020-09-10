@@ -3,6 +3,7 @@ import Footer from "./footer";
 import Filter from "./filter";
 import TodoList from "./todolist";
 import {TASK_STATUS} from "../const";
+import '../style/app.css';
 
 
 interface TaskType {
@@ -11,7 +12,7 @@ interface TaskType {
     status: string,
 }
 
-interface StateTypes {
+interface AppStateTypes {
     todoTasks: TaskType[],
     isAllChecked: boolean,
     activeFilter: string,
@@ -19,14 +20,14 @@ interface StateTypes {
     newTask: TaskType | null,
 }
 
-interface PropsTypes {
+export interface AppPropsTypes {
     todoTasks: TaskType[],
 }
 
-class App extends React.PureComponent<PropsTypes, StateTypes> {
-    state: StateTypes;
+class App extends React.PureComponent<AppPropsTypes, AppStateTypes> {
+    state: AppStateTypes;
 
-    constructor(props: PropsTypes) {
+    constructor(props: AppPropsTypes) {
         super(props);
 
         this.state = {
@@ -56,21 +57,28 @@ class App extends React.PureComponent<PropsTypes, StateTypes> {
 
         return (
             <div>
-                <h1>todos</h1>
-                <input type="checkbox" checked={isAllChecked} onChange={this._handleCheckedAllTasksClick}/>
-                <input type="text" placeholder="What needs to be done?" onKeyDown={this._handleNewTaskEnterDown}
-                       onChange={this._handleNewTaskChange} value={newTask ? newTask.task : ``} />
-                <TodoList todoTasks={tasksOfActiveFilter} onTaskChecked={this._handleTaskChecked}
-                          onTaskChange={this._handleTaskChange} onTaskKeyDown={this._handleTaskKeyDown}
-                          onDeleteButtonClick={this._handleDeleteButtonClick}/>
-                <div>
-                    <span>{countOfActiveTasks}</span> {countOfActiveTasks === 1 ? `item` : `items`} left
-                    <Filter onFilterClick={this._handleFilterClick}/>
-                    {
-                        isCompletedTasks ?
-                            <span><a href="#" onClick={this._handleClearCompletedClick}>Clear completed</a></span> :
-                            ``
-                    }
+                <h1 className="header">todos</h1>
+                <div className="workspace">
+                    <section className="new-task">
+                        <input className="check-all-button" type="checkbox" checked={isAllChecked}
+                               onChange={this._handleCheckedAllTasksClick}/>
+                        <input className="new-task-field" type="text" placeholder="What needs to be done?"
+                               onKeyDown={this._handleNewTaskEnterDown}
+                               onChange={this._handleNewTaskChange} value={newTask ? newTask.task : ``}/>
+                    </section>
+                    <TodoList todoTasks={tasksOfActiveFilter} onTaskChecked={this._handleTaskChecked}
+                              onTaskChange={this._handleTaskChange} onTaskKeyDown={this._handleTaskKeyDown}
+                              onDeleteButtonClick={this._handleDeleteButtonClick}/>
+                    <div className="info-block">
+                    <span
+                        className="items-count">{countOfActiveTasks} {countOfActiveTasks === 1 ? `item` : `items`} left</span>
+                        <Filter activeFilter={activeFilter} onFilterClick={this._handleFilterClick}/>
+                        {
+                            isCompletedTasks ?
+                                <span><a className="clear-button" href="#" onClick={this._handleClearCompletedClick}>Clear completed</a></span> :
+                                ``
+                        }
+                    </div>
                 </div>
                 <Footer/>
             </div>

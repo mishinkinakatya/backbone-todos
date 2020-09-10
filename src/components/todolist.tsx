@@ -1,5 +1,6 @@
 import * as React from "react";
 import TodoItem from "./todoItem";
+import "../style/todolist.css";
 
 interface TaskType {
     id: number,
@@ -7,7 +8,7 @@ interface TaskType {
     status: string,
 }
 
-interface PropsTypes {
+export interface TodoListPropsTypes {
     todoTasks: TaskType[],
     onTaskChange: (id: number, taskText: string) => void,
     onTaskChecked: (id: number) => void,
@@ -15,11 +16,11 @@ interface PropsTypes {
     onTaskKeyDown: (todo: TaskType, oldTodo: TaskType, taskKey: string) => void
 };
 
-const TodoList: React.FC<PropsTypes> = (props) => {
+const TodoList: React.FC<TodoListPropsTypes> = (props) => {
     const {todoTasks, onTaskChange, onTaskChecked, onDeleteButtonClick, onTaskKeyDown} = props;
 
     return (
-        <ul>
+        <ul className="todo-list">
             {todoTasks.map((todo ) => {
                 return (
                     <TodoItem key={todo.id} todo={todo} onTaskChange={onTaskChange} onTaskChecked={onTaskChecked} onDeleteButtonClick={onDeleteButtonClick} onTaskKeyDown={onTaskKeyDown} />

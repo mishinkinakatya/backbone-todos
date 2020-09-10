@@ -1,8 +1,9 @@
 import * as React from "react";
+import '../style/footer.css';
 
 
 const Footer = () =>
-    <div>
+    <div className="footer">
         <p>Double-click to edit a todo</p>
         <p>Written by Addy Osmani</p>
         <p>Part of TodoMVC</p>
