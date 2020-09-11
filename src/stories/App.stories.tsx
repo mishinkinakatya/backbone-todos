@@ -39,3 +39,20 @@ export const WithCompletedTasks = () => <App
         ]
     }
 />
+
+export const WithUnCompletedTasks = () => <App
+    todoTasks={
+        [
+            {
+                id: 0,
+                task: `First`,
+                status: TaskStatus.Uncompleted,
+            },
+            {
+                id: 1,
+                task: `Second`,
+                status: TaskStatus.Uncompleted,
+            }
+        ]
+    }
+/>

@@ -7,16 +7,17 @@ import {Task} from "./task";
 export interface TodoListProps {
     todoTasks: Task[],
     onTaskChange: (todo: Task) => void,
+    onTaskDelete: (todo: Task) => void,
 };
 
 const TodoList: React.FC<TodoListProps> = (props) => {
-    const {todoTasks, onTaskChange} = props;
+    const {todoTasks, onTaskChange, onTaskDelete} = props;
 
     return (
         <ul className="todo-list">
             {todoTasks.map((todo ) => {
                 return (
-                    <TodoItem key={todo.id} todo={todo} onTaskChange={onTaskChange} />
+                    <TodoItem key={todo.id} todo={todo} onTaskChange={onTaskChange} onTaskDelete={onTaskDelete}/>
                 )
             })
             }

@@ -5,12 +5,12 @@ import TodoList from "./todolist";
 import {FILTER_TYPE} from "../const";
 import '../style/app.css';
 import {Task, TaskStatus} from "./task";
-import {todoTasks} from "../mock";
 
 
 interface AppState {
     activeFilter: string,
     newTask: Task | null,
+    todoTasks: Task[],
 }
 
 export interface AppProps {
@@ -26,12 +26,12 @@ class App extends React.PureComponent<AppProps, AppState> {
         this.state = {
             activeFilter: FILTER_TYPE.ALL,
             newTask: null,
+            todoTasks: this.props.todoTasks
         };
     }
 
     render() {
-        const {todoTasks} = this.props;
-        const {activeFilter, newTask} = this.state;
+        const {activeFilter, newTask, todoTasks} = this.state;
 
         const countOfActiveTasks = todoTasks.filter((todo) => todo.status === TaskStatus.Uncompleted).length;
         const tasksOfActiveFilter = activeFilter === FILTER_TYPE.ACTIVE ? todoTasks.filter((todo) => todo.status === TaskStatus.Uncompleted) : activeFilter === FILTER_TYPE.COMPLETED ? todoTasks.filter((todo) => todo.status === TaskStatus.Completed) : todoTasks;
@@ -43,13 +43,14 @@ class App extends React.PureComponent<AppProps, AppState> {
                 <div className="workspace">
                     <section className="new-task">
                         <input className="check-all-button" type="checkbox"
-                               checked={this.props.todoTasks.every((task) => task.status === TaskStatus.Completed)}
+                               checked={todoTasks.every((task) => task.status === TaskStatus.Completed)}
                                onChange={this._handleCheckedAllTasks}/>
                         <input className="new-task-field" type="text" placeholder="What needs to be done?"
                                onKeyDown={this._handleNewTaskEnterDown}
                                onChange={this._handleNewTaskChange} value={newTask ? newTask.task : ``}/>
                     </section>
-                    <TodoList todoTasks={tasksOfActiveFilter} onTaskChange={this._handleTaskChange}/>
+                    <TodoList todoTasks={tasksOfActiveFilter} onTaskChange={this._handleTaskChange}
+                              onTaskDelete={this._handleTaskDelete}/>
                     <div className="info-block">
                     <span
                         className="items-count">{countOfActiveTasks} {countOfActiveTasks === 1 ? `item` : `items`} left</span>
@@ -68,30 +69,30 @@ class App extends React.PureComponent<AppProps, AppState> {
 
     // NewTask
     _handleCheckedAllTasks = () => {
-        if (this.props.todoTasks.every((task) => task.status === TaskStatus.Completed)) {
+        const {todoTasks} = this.state;
 
-            todoTasks.map((todo) => {
-                return (
-                    {
-                        ...todo,
-                        status: TaskStatus.Uncompleted,
-                    }
-                )
-            })
-        } else {
-            todoTasks.map((todo) => {
-                return (
-                    {
-                        ...todo,
-                        status: TaskStatus.Completed,
-                    }
-                )
-            })
+        const isAllChecked = todoTasks.every((task) => task.status === TaskStatus.Completed);
+
+        const changeTaskStatus = (todo: Task) => {
+            const taskWithNewStatus = isAllChecked ?
+                {
+                    ...todo,
+                    status: TaskStatus.Uncompleted,
+                } :
+                {
+                    ...todo,
+                    status: TaskStatus.Completed,
+                }
+            return taskWithNewStatus;
         }
+
+        this.setState({
+            todoTasks: todoTasks.map((todo) => changeTaskStatus(todo)),
+        })
     }
 
     _handleNewTaskChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-        const {todoTasks} = this.props;
+        const {todoTasks} = this.state;
 
         this.setState({
             newTask: {
@@ -103,30 +104,33 @@ class App extends React.PureComponent<AppProps, AppState> {
     }
 
     _handleNewTaskEnterDown = (evt: React.KeyboardEvent) => {
-        const {todoTasks} = this.props;
-        const {newTask} = this.state;
+        const {newTask, todoTasks} = this.state;
 
-        const isEnterKey = evt.key === `Enter`;
-
-        const newTodoTasks = isEnterKey && newTask !== null ? [...todoTasks, newTask] : todoTasks;
-
-        if (isEnterKey) {
+        if (evt.key === `Enter` && newTask !== null) {
             this.setState({
-                newTask: null
+                newTask: null,
+                todoTasks: [...todoTasks, newTask],
             });
         }
     }
 
     // TaskList
     _handleTaskChange = (newTask: Task) => {
-        const {todoTasks} = this.props;
+        const {todoTasks} = this.state;
         const todoIndex = todoTasks.findIndex((todoTask) => todoTask.id === newTask.id);
 
-        return [
-            ...todoTasks.slice(0, todoIndex),
-            newTask,
-            ...todoTasks.slice(todoIndex + 1)
-        ];
+        this.setState({
+            todoTasks: [...todoTasks.slice(0, todoIndex), newTask, ...todoTasks.slice(todoIndex + 1)],
+        })
+    }
+
+    _handleTaskDelete = (task: Task) => {
+        const {todoTasks} = this.state;
+        const todoIndex = todoTasks.findIndex((todoTask) => todoTask.id === task.id);
+
+        this.setState({
+            todoTasks: [...todoTasks.slice(0, todoIndex), ...todoTasks.slice(todoIndex + 1)],
+        })
     }
 
     // Footer
@@ -135,9 +139,11 @@ class App extends React.PureComponent<AppProps, AppState> {
     }
 
     _handleClearCompletedClick = () => {
-        const {todoTasks} = this.props;
+        const {todoTasks} = this.state;
 
-        return [...todoTasks.filter((todo) => todo.status === TaskStatus.Uncompleted)];
+        this.setState({
+            todoTasks: [...todoTasks.filter((todo) => todo.status === TaskStatus.Uncompleted)],
+        })
     }
 }
 

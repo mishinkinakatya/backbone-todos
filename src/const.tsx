@@ -3,8 +3,3 @@ export const FILTER_TYPE = {
     ACTIVE: `Active`,
     COMPLETED: `Completed`,
 };
-
-export const TASK_STATE = {
-    EDIT: `Edit`,
-    READ: `Read`,
-};

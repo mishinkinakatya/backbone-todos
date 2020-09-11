@@ -1,28 +1,24 @@
 import * as React from 'react';
 
-import { Story, Meta } from '@storybook/react/types-6-0';
-import Filter, {FilterProps} from "../components/filter";
+import { Meta } from '@storybook/react/types-6-0';
+import Filter from "../components/filter";
 import {FILTER_TYPE} from "../const";
+import {action} from "@storybook/addon-actions";
 
-export default {
-    title: 'Example/Filter',
-    component: Filter,
-} as Meta;
+export default {title: 'Todo MVC/Filter'} as Meta;
 
-const Template: Story<FilterProps> = (args) => <Filter {...args}/>;
 
-export const AllFilters = Template.bind({});
-AllFilters.args = {
-    activeFilter: FILTER_TYPE.ALL
-}
+export const AllFilters = () => <Filter
+    activeFilter={FILTER_TYPE.ALL}
+    onFilterClick={action("onFilterClick")}
+/>
 
-export const ActiveFilters = Template.bind({});
-ActiveFilters.args = {
-    activeFilter: FILTER_TYPE.ACTIVE
-}
+export const ActiveFilters = () => <Filter
+    activeFilter={FILTER_TYPE.ACTIVE}
+    onFilterClick={action("onFilterClick")}
+/>
 
-export const CompletedFilters = Template.bind({});
-CompletedFilters.args = {
-    activeFilter: FILTER_TYPE.COMPLETED
-}
-
+export const CompletedFilters = () => <Filter
+    activeFilter={FILTER_TYPE.COMPLETED}
+    onFilterClick={action("onFilterClick")}
+/>

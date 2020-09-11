@@ -1,5 +1,4 @@
 import * as React from "react";
-import {TASK_STATE} from "../const";
 import "../style/todoItem.css";
 import {Task, TaskStatus} from "./task";
 
@@ -7,10 +6,16 @@ import {Task, TaskStatus} from "./task";
 export interface TodoItemProps {
     todo: Task,
     onTaskChange: (todo: Task) => void,
+    onTaskDelete: (todo: Task) => void,
 }
 
+export enum TodoState {
+    Edit,
+    Read
+};
+
 interface TodoItemState {
-    currentState: string,
+    currentState: TodoState,
     currentTask: string,
 }
 
@@ -21,7 +26,7 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         super(props);
 
         this.state = {
-            currentState: TASK_STATE.READ,
+            currentState: TodoState.Read,
             currentTask: this.props.todo.task,
         };
     }
@@ -32,7 +37,7 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
 
         return (
             <li className="todo-item">
-                {currentState === TASK_STATE.EDIT
+                {currentState === TodoState.Edit
                     ? <div>
                         <input
                             className="edit-task"
@@ -92,21 +97,21 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         if (newCurrentTask != undefined) {
             onTaskChange(newCurrentTask);
             this.setState({
-                currentState: TASK_STATE.READ,
-                currentTask: todo.task
+                currentState: TodoState.Read,
+                currentTask: newCurrentTask.task
             });
         }
     }
 
     _handleDeleteButtonClick = () => {
-        const {onTaskChange} = this.props;
+        const {todo, onTaskDelete} = this.props;
 
-        onTaskChange(null);
+        onTaskDelete(todo);
     }
 
     _handleDoubleClickOnTask = () => {
         this.setState({
-            currentState: TASK_STATE.EDIT,
+            currentState: TodoState.Edit,
         });
     }
 }

@@ -29114,7 +29114,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_app_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../style/app.css */ "./src/style/app.css");
 /* harmony import */ var _style_app_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_app_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./task */ "./src/components/task.tsx");
-/* harmony import */ var _mock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../mock */ "./src/mock.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -29163,7 +29162,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var App = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(App, _React$PureComponent);
 
@@ -29179,25 +29177,29 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "state", void 0);
 
     _defineProperty(_assertThisInitialized(_this), "_handleCheckedAllTasks", function () {
-      if (_this.props.todoTasks.every(function (task) {
+      var todoTasks = _this.state.todoTasks;
+      var isAllChecked = todoTasks.every(function (task) {
         return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
-      })) {
-        _mock__WEBPACK_IMPORTED_MODULE_7__["todoTasks"].map(function (todo) {
-          return _objectSpread(_objectSpread({}, todo), {}, {
-            status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
-          });
+      });
+
+      var changeTaskStatus = function changeTaskStatus(todo) {
+        var taskWithNewStatus = isAllChecked ? _objectSpread(_objectSpread({}, todo), {}, {
+          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
+        }) : _objectSpread(_objectSpread({}, todo), {}, {
+          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed
         });
-      } else {
-        _mock__WEBPACK_IMPORTED_MODULE_7__["todoTasks"].map(function (todo) {
-          return _objectSpread(_objectSpread({}, todo), {}, {
-            status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed
-          });
-        });
-      }
+        return taskWithNewStatus;
+      };
+
+      _this.setState({
+        todoTasks: todoTasks.map(function (todo) {
+          return changeTaskStatus(todo);
+        })
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleNewTaskChange", function (evt) {
-      var todoTasks = _this.props.todoTasks;
+      var todoTasks = _this.state.todoTasks;
 
       _this.setState({
         newTask: {
@@ -29209,24 +29211,38 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleNewTaskEnterDown", function (evt) {
-      var todoTasks = _this.props.todoTasks;
-      var newTask = _this.state.newTask;
-      var isEnterKey = evt.key === "Enter";
-      var newTodoTasks = isEnterKey && newTask !== null ? [].concat(_toConsumableArray(todoTasks), [newTask]) : todoTasks;
+      var _this$state = _this.state,
+          newTask = _this$state.newTask,
+          todoTasks = _this$state.todoTasks;
 
-      if (isEnterKey) {
+      if (evt.key === "Enter" && newTask !== null) {
         _this.setState({
-          newTask: null
+          newTask: null,
+          todoTasks: [].concat(_toConsumableArray(todoTasks), [newTask])
         });
       }
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleTaskChange", function (newTask) {
-      var todoTasks = _this.props.todoTasks;
+      var todoTasks = _this.state.todoTasks;
       var todoIndex = todoTasks.findIndex(function (todoTask) {
         return todoTask.id === newTask.id;
       });
-      return [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1)));
+
+      _this.setState({
+        todoTasks: [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1)))
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleTaskDelete", function (task) {
+      var todoTasks = _this.state.todoTasks;
+      var todoIndex = todoTasks.findIndex(function (todoTask) {
+        return todoTask.id === task.id;
+      });
+
+      _this.setState({
+        todoTasks: [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), _toConsumableArray(todoTasks.slice(todoIndex + 1)))
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleFilterClick", function (filterName) {
@@ -29236,15 +29252,19 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleClearCompletedClick", function () {
-      var todoTasks = _this.props.todoTasks;
-      return _toConsumableArray(todoTasks.filter(function (todo) {
-        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
-      }));
+      var todoTasks = _this.state.todoTasks;
+
+      _this.setState({
+        todoTasks: _toConsumableArray(todoTasks.filter(function (todo) {
+          return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
+        }))
+      });
     });
 
     _this.state = {
       activeFilter: _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].ALL,
-      newTask: null
+      newTask: null,
+      todoTasks: _this.props.todoTasks
     };
     return _this;
   }
@@ -29252,10 +29272,10 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      var todoTasks = this.props.todoTasks;
-      var _this$state = this.state,
-          activeFilter = _this$state.activeFilter,
-          newTask = _this$state.newTask;
+      var _this$state2 = this.state,
+          activeFilter = _this$state2.activeFilter,
+          newTask = _this$state2.newTask,
+          todoTasks = _this$state2.todoTasks;
       var countOfActiveTasks = todoTasks.filter(function (todo) {
         return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
       }).length;
@@ -29276,7 +29296,7 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         className: "check-all-button",
         type: "checkbox",
-        checked: this.props.todoTasks.every(function (task) {
+        checked: todoTasks.every(function (task) {
           return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
         }),
         onChange: this._handleCheckedAllTasks
@@ -29289,7 +29309,8 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
         value: newTask ? newTask.task : ""
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todolist__WEBPACK_IMPORTED_MODULE_3__["default"], {
         todoTasks: tasksOfActiveFilter,
-        onTaskChange: this._handleTaskChange
+        onTaskChange: this._handleTaskChange,
+        onTaskDelete: this._handleTaskDelete
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
         className: "info-block"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
@@ -29405,17 +29426,17 @@ var TaskStatus;
 /*!*************************************!*\
   !*** ./src/components/todoItem.tsx ***!
   \*************************************/
-/*! exports provided: default */
+/*! exports provided: TodoState, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TodoState", function() { return TodoState; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
-/* harmony import */ var _style_todoItem_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../style/todoItem.css */ "./src/style/todoItem.css");
-/* harmony import */ var _style_todoItem_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_todoItem_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./task */ "./src/components/task.tsx");
+/* harmony import */ var _style_todoItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../style/todoItem.css */ "./src/style/todoItem.css");
+/* harmony import */ var _style_todoItem_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_todoItem_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task */ "./src/components/task.tsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -29447,7 +29468,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+var TodoState;
 
+(function (TodoState) {
+  TodoState[TodoState["Edit"] = 0] = "Edit";
+  TodoState[TodoState["Read"] = 1] = "Read";
+})(TodoState || (TodoState = {}));
+
+;
 
 var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(TodoItem, _React$PureComponent);
@@ -29469,7 +29497,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
           onTaskChange = _this$props.onTaskChange;
 
       var newTask = _objectSpread(_objectSpread({}, todo), {}, {
-        status: todo.status === _task__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].Completed ? _task__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].Uncompleted : _task__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].Completed
+        status: todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed ? _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Uncompleted : _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed
       });
 
       onTaskChange(newTask);
@@ -29503,25 +29531,27 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
         onTaskChange(newCurrentTask);
 
         _this.setState({
-          currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].READ,
-          currentTask: todo.task
+          currentState: TodoState.Read,
+          currentTask: newCurrentTask.task
         });
       }
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleDeleteButtonClick", function () {
-      var onTaskChange = _this.props.onTaskChange;
-      onTaskChange(null);
+      var _this$props3 = _this.props,
+          todo = _this$props3.todo,
+          onTaskDelete = _this$props3.onTaskDelete;
+      onTaskDelete(todo);
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleDoubleClickOnTask", function () {
       _this.setState({
-        currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].EDIT
+        currentState: TodoState.Edit
       });
     });
 
     _this.state = {
-      currentState: _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].READ,
+      currentState: TodoState.Read,
       currentTask: _this.props.todo.task
     };
     return _this;
@@ -29536,7 +29566,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
           currentTask = _this$state.currentTask;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
         className: "todo-item"
-      }, currentState === _const__WEBPACK_IMPORTED_MODULE_1__["TASK_STATE"].EDIT ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+      }, currentState === TodoState.Edit ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         className: "edit-task",
         type: "text",
         onChange: this._handleTaskTextChange,
@@ -29545,10 +29575,10 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
       })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         className: "check-button",
         type: "checkbox",
-        checked: todo.status === _task__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].Completed,
+        checked: todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed,
         onChange: this._handleTaskStatusChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-        className: "".concat(todo.status === _task__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].Completed ? "label-field-completed" : "label-field"),
+        className: "".concat(todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed ? "label-field-completed" : "label-field"),
         onDoubleClick: this._handleDoubleClickOnTask
       }, todo.task), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
         className: "delete-button",
@@ -29585,14 +29615,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var TodoList = function TodoList(props) {
   var todoTasks = props.todoTasks,
-      onTaskChange = props.onTaskChange;
+      onTaskChange = props.onTaskChange,
+      onTaskDelete = props.onTaskDelete;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
     className: "todo-list"
   }, todoTasks.map(function (todo) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todoItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: todo.id,
       todo: todo,
-      onTaskChange: onTaskChange
+      onTaskChange: onTaskChange,
+      onTaskDelete: onTaskDelete
     });
   }));
 };
@@ -29605,21 +29637,16 @@ var TodoList = function TodoList(props) {
 /*!***********************!*\
   !*** ./src/const.tsx ***!
   \***********************/
-/*! exports provided: FILTER_TYPE, TASK_STATE */
+/*! exports provided: FILTER_TYPE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FILTER_TYPE", function() { return FILTER_TYPE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TASK_STATE", function() { return TASK_STATE; });
 var FILTER_TYPE = {
   ALL: "All",
   ACTIVE: "Active",
   COMPLETED: "Completed"
-};
-var TASK_STATE = {
-  EDIT: "Edit",
-  READ: "Read"
 };
 
 /***/ }),

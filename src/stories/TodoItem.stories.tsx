@@ -1,8 +1,7 @@
 import * as React from 'react';
 
-import {Story, Meta} from '@storybook/react/types-6-0';
-import TodoItem, {TodoItemProps} from "../components/todoItem";
-import {FILTER_TYPE} from "../const";
+import {Meta} from '@storybook/react/types-6-0';
+import TodoItem from "../components/todoItem";
 import {TaskStatus} from "../components/task";
 import {action} from "@storybook/addon-actions";
 
@@ -16,10 +15,8 @@ export const TodoItemPage = () => <TodoItem
         task: `First`,
         status: TaskStatus.Uncompleted
     }}
-    onTaskChecked={action("onTaskChecked")}
-    onDeleteButtonClick={action("onDeleteButtonClick")}
     onTaskChange={action("onTaskChange")}
-    onTaskKeyDown={action("onTaskKeyDown")}
+    onTaskDelete={action("onTaskDelete")}
 />
 
 export const CompletedTodoItems = () =>  <TodoItem
@@ -28,8 +25,6 @@ export const CompletedTodoItems = () =>  <TodoItem
         task: `First`,
         status: TaskStatus.Completed
     }}
-    onTaskChecked={action("onTaskChecked")}
-    onDeleteButtonClick={action("onDeleteButtonClick")}
     onTaskChange={action("onTaskChange")}
-    onTaskKeyDown={action("onTaskKeyDown")}
+    onTaskDelete={action("onTaskDelete")}
 />
