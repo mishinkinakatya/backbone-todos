@@ -1,29 +1,22 @@
 import * as React from "react";
 import TodoItem from "./todoItem";
 import "../style/todolist.css";
+import {Task} from "./task";
 
-interface TaskType {
-    id: number,
-    task: string,
-    status: string,
-}
 
-export interface TodoListPropsTypes {
-    todoTasks: TaskType[],
-    onTaskChange: (id: number, taskText: string) => void,
-    onTaskChecked: (id: number) => void,
-    onDeleteButtonClick: (id: number) => void,
-    onTaskKeyDown: (todo: TaskType, oldTodo: TaskType, taskKey: string) => void
+export interface TodoListProps {
+    todoTasks: Task[],
+    onTaskChange: (todo: Task) => void,
 };
 
-const TodoList: React.FC<TodoListPropsTypes> = (props) => {
-    const {todoTasks, onTaskChange, onTaskChecked, onDeleteButtonClick, onTaskKeyDown} = props;
+const TodoList: React.FC<TodoListProps> = (props) => {
+    const {todoTasks, onTaskChange} = props;
 
     return (
         <ul className="todo-list">
             {todoTasks.map((todo ) => {
                 return (
-                    <TodoItem key={todo.id} todo={todo} onTaskChange={onTaskChange} onTaskChecked={onTaskChecked} onDeleteButtonClick={onDeleteButtonClick} onTaskKeyDown={onTaskKeyDown} />
+                    <TodoItem key={todo.id} todo={todo} onTaskChange={onTaskChange} />
                 )
             })
             }

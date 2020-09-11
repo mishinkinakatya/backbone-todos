@@ -1,17 +1,17 @@
 import * as React from "react";
-import {TASK_STATUS} from "../const";
+import {FILTER_TYPE} from "../const";
 import '../style/filter.css';
 
 
-export interface FilterPropsTypes {
+export interface FilterProps {
     activeFilter: string,
     onFilterClick: (status: string) =>  void,
 };
 
 
-const Filter: React.FC<FilterPropsTypes> = (props) => {
+const Filter: React.FC<FilterProps> = (props) => {
     const {activeFilter, onFilterClick} = props;
-    const allStatus = Object.values(TASK_STATUS);
+    const allStatus = Object.values(FILTER_TYPE);
 
     return (
         <ul className="filter">

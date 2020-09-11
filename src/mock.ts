@@ -1,24 +1,24 @@
-import {TASK_STATUS} from "./const";
+import {TaskStatus} from "./components/task";
 
 export const todoTasks = [
     {
         id: 0,
         task: `First`,
-        status: TASK_STATUS.ACTIVE,
+        status: TaskStatus.Uncompleted,
     },
     {
         id: 1,
         task: `Second`,
-        status: TASK_STATUS.COMPLETED,
+        status: TaskStatus.Completed,
     },
     {
         id: 2,
         task: `Third`,
-        status: TASK_STATUS.ACTIVE,
+        status: TaskStatus.Uncompleted,
     },
     {
         id: 3,
         task: `Fourth`,
-        status: TASK_STATUS.COMPLETED,
+        status: TaskStatus.Completed,
     },
 ];

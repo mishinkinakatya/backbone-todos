@@ -1,44 +1,34 @@
 import * as React from "react";
-import {TASK_STATUS, TASK_STATE} from "../const";
+import {TASK_STATE} from "../const";
 import "../style/todoItem.css";
+import {Task, TaskStatus} from "./task";
 
 
-interface TaskType {
-    id: number,
-    task: string,
-    status: string,
+export interface TodoItemProps {
+    todo: Task,
+    onTaskChange: (todo: Task) => void,
 }
 
-export interface TodoItemPropsTypes {
-    todo: TaskType,
-    onTaskChecked: (id: number) => void,
-    onDeleteButtonClick: (id: number) => void,
-    onTaskChange: (id: number, taskText: string) => void,
-    onTaskKeyDown: (todo: TaskType, oldTodo: TaskType, taskKey: string) => void
-}
-
-interface TodoItemStateTypes {
+interface TodoItemState {
     currentState: string,
-    oldTodo: TaskType,
+    currentTask: string,
 }
 
-class TodoItem extends React.PureComponent<TodoItemPropsTypes, TodoItemStateTypes> {
-    state: TodoItemStateTypes;
+class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
+    state: TodoItemState;
 
-    constructor(props: TodoItemPropsTypes) {
+    constructor(props: TodoItemProps) {
         super(props);
 
         this.state = {
             currentState: TASK_STATE.READ,
-            oldTodo: Object.assign({}, this.props.todo),
+            currentTask: this.props.todo.task,
         };
-
-        this._handleDoubleClickOnTask = this._handleDoubleClickOnTask.bind(this);
     }
 
     render() {
-        const {onTaskChecked, onDeleteButtonClick, todo, onTaskChange, onTaskKeyDown} = this.props;
-        const {currentState, oldTodo} = this.state;
+        const {todo} = this.props;
+        const {currentState, currentTask} = this.state;
 
         return (
             <li className="todo-item">
@@ -47,36 +37,74 @@ class TodoItem extends React.PureComponent<TodoItemPropsTypes, TodoItemStateType
                         <input
                             className="edit-task"
                             type="text"
-                            onChange={(evt) => onTaskChange(todo.id, evt.target.value)}
-                            value={todo.task}
-                            onKeyDown={(evt) => {
-                                const isEnterKey = evt.key === `Enter`;
-                                const isEscKey = evt.key === `Esc` || evt.key === `Escape`;
-
-                                onTaskKeyDown(todo, oldTodo, evt.key);
-
-                                isEnterKey || isEscKey ?
-                                    this.setState({
-                                        currentState: TASK_STATE.READ,
-                                    }) : ``;
-                            }}
+                            onChange={this._handleTaskTextChange}
+                            value={currentTask}
+                            onKeyDown={this._handleTaskKeyDown}
                         />
                     </div>
                     :
                     <div>
-                        <input className="check-button" type="checkbox" checked={todo.status === TASK_STATUS.COMPLETED}
-                               onChange={() => onTaskChecked(todo.id)} />
+                        <input className="check-button" type="checkbox" checked={todo.status === TaskStatus.Completed}
+                               onChange={this._handleTaskStatusChange}/>
                         <label
-                            className={`${todo.status === TASK_STATUS.COMPLETED ? `label-field-completed` : `label-field`}`}
+                            className={`${todo.status === TaskStatus.Completed ? `label-field-completed` : `label-field`}`}
                             onDoubleClick={this._handleDoubleClickOnTask}>{todo.task}</label>
-                            <button className="delete-button" onClick={() => onDeleteButtonClick(todo.id)}>×</button>
+                        <button className="delete-button" onClick={this._handleDeleteButtonClick}>×</button>
                     </div>
                 }
             </li>
         )
     }
 
-    _handleDoubleClickOnTask() {
+    _handleTaskStatusChange = () => {
+        const {todo, onTaskChange} = this.props;
+
+        const newTask = {
+            ...todo,
+            status: todo.status === TaskStatus.Completed ? TaskStatus.Uncompleted : TaskStatus.Completed
+        };
+
+        onTaskChange(newTask);
+    }
+
+    _handleTaskTextChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+
+        this.setState({currentTask: evt.target.value});
+    }
+
+    _handleTaskKeyDown = (evt: React.KeyboardEvent) => {
+        const {todo, onTaskChange} = this.props;
+
+        const isEnterKey: boolean = evt.key === `Enter`;
+        const isEscKey: boolean = evt.key === `Esc` || evt.key === `Escape`;
+
+        let newCurrentTask;
+        if (isEscKey) {
+            newCurrentTask = todo;
+        }
+        if (isEnterKey) {
+            newCurrentTask = {
+                    ...todo,
+                    task: this.state.currentTask,
+                };
+        }
+
+        if (newCurrentTask != undefined) {
+            onTaskChange(newCurrentTask);
+            this.setState({
+                currentState: TASK_STATE.READ,
+                currentTask: todo.task
+            });
+        }
+    }
+
+    _handleDeleteButtonClick = () => {
+        const {onTaskChange} = this.props;
+
+        onTaskChange(null);
+    }
+
+    _handleDoubleClickOnTask = () => {
         this.setState({
             currentState: TASK_STATE.EDIT,
         });

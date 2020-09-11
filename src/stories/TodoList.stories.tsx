@@ -1,15 +1,15 @@
 import * as React from 'react';
 
 import {Story, Meta} from '@storybook/react/types-6-0';
-import TodoList, {TodoListPropsTypes} from "../components/todolist";
-import {TASK_STATUS} from "../const";
+import TodoList, {TodoListProps} from "../components/todolist";
+import {FILTER_TYPE} from "../const";
 
 export default {
     title: 'Example/TodoList',
     component: TodoList,
 } as Meta;
 
-const Template: Story<TodoListPropsTypes> = (args) => <TodoList {...args}/>;
+const Template: Story<TodoListProps> = (args) => <TodoList {...args}/>;
 
 export const FullTodoList = Template.bind({});
 FullTodoList.args = {
@@ -17,12 +17,12 @@ FullTodoList.args = {
         {
             id: 0,
             task: `First`,
-            status: TASK_STATUS.ACTIVE,
+            status: FILTER_TYPE.ACTIVE,
         },
         {
             id: 1,
             task: `Second`,
-            status: TASK_STATUS.COMPLETED,
+            status: FILTER_TYPE.COMPLETED,
         }]
 }
 
