@@ -14,12 +14,12 @@ export const FullTodoList = () => <TodoList
         [
     {
         id: 0,
-        task: `First`,
+        description: `First`,
         status: TaskStatus.Uncompleted,
     },
     {
         id: 1,
-        task: `Second`,
+        description: `Second`,
         status: TaskStatus.Completed,
     }]
     }

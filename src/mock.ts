@@ -3,22 +3,22 @@ import {TaskStatus} from "./components/task";
 export const todoTasks = [
     {
         id: 0,
-        task: `First`,
+        description: `First`,
         status: TaskStatus.Uncompleted,
     },
     {
         id: 1,
-        task: `Second`,
+        description: `Second`,
         status: TaskStatus.Completed,
     },
     {
         id: 2,
-        task: `Third`,
+        description: `Third`,
         status: TaskStatus.Uncompleted,
     },
     {
         id: 3,
-        task: `Fourth`,
+        description: `Fourth`,
         status: TaskStatus.Completed,
     },
 ];

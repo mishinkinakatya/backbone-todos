@@ -1,6 +1,6 @@
 export interface Task {
     id: number,
-    task: string,
+    description: string,
     status: TaskStatus,
 }
 
@@ -8,3 +8,4 @@ export enum TaskStatus {
     Completed,
     Uncompleted
 }
+

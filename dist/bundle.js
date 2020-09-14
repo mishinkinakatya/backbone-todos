@@ -29177,7 +29177,9 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "state", void 0);
 
     _defineProperty(_assertThisInitialized(_this), "_handleCheckedAllTasks", function () {
-      var todoTasks = _this.state.todoTasks;
+      var _this$props = _this.props,
+          todoTasks = _this$props.todoTasks,
+          onChangeTodoTasks = _this$props.onChangeTodoTasks;
       var isAllChecked = todoTasks.every(function (task) {
         return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
       });
@@ -29191,58 +29193,56 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
         return taskWithNewStatus;
       };
 
-      _this.setState({
-        todoTasks: todoTasks.map(function (todo) {
-          return changeTaskStatus(todo);
-        })
-      });
+      onChangeTodoTasks(todoTasks.map(function (todo) {
+        return changeTaskStatus(todo);
+      }));
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleNewTaskChange", function (evt) {
-      var todoTasks = _this.state.todoTasks;
+      var todoTasks = _this.props.todoTasks;
 
       _this.setState({
         newTask: {
           id: todoTasks.length + 1,
-          task: evt.target.value,
+          description: evt.target.value,
           status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
         }
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleNewTaskEnterDown", function (evt) {
-      var _this$state = _this.state,
-          newTask = _this$state.newTask,
-          todoTasks = _this$state.todoTasks;
+      var newTask = _this.state.newTask;
+      var _this$props2 = _this.props,
+          todoTasks = _this$props2.todoTasks,
+          onChangeTodoTasks = _this$props2.onChangeTodoTasks;
 
       if (evt.key === "Enter" && newTask !== null) {
+        onChangeTodoTasks([].concat(_toConsumableArray(todoTasks), [newTask]));
+
         _this.setState({
-          newTask: null,
-          todoTasks: [].concat(_toConsumableArray(todoTasks), [newTask])
+          newTask: null
         });
       }
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleTaskChange", function (newTask) {
-      var todoTasks = _this.state.todoTasks;
+      var _this$props3 = _this.props,
+          todoTasks = _this$props3.todoTasks,
+          onChangeTodoTasks = _this$props3.onChangeTodoTasks;
       var todoIndex = todoTasks.findIndex(function (todoTask) {
         return todoTask.id === newTask.id;
       });
-
-      _this.setState({
-        todoTasks: [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1)))
-      });
+      onChangeTodoTasks([].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1))));
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleTaskDelete", function (task) {
-      var todoTasks = _this.state.todoTasks;
+      var _this$props4 = _this.props,
+          todoTasks = _this$props4.todoTasks,
+          onChangeTodoTasks = _this$props4.onChangeTodoTasks;
       var todoIndex = todoTasks.findIndex(function (todoTask) {
         return todoTask.id === task.id;
       });
-
-      _this.setState({
-        todoTasks: [].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), _toConsumableArray(todoTasks.slice(todoIndex + 1)))
-      });
+      onChangeTodoTasks([].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), _toConsumableArray(todoTasks.slice(todoIndex + 1))));
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleFilterClick", function (filterName) {
@@ -29252,19 +29252,17 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "_handleClearCompletedClick", function () {
-      var todoTasks = _this.state.todoTasks;
-
-      _this.setState({
-        todoTasks: _toConsumableArray(todoTasks.filter(function (todo) {
-          return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
-        }))
-      });
+      var _this$props5 = _this.props,
+          todoTasks = _this$props5.todoTasks,
+          onChangeTodoTasks = _this$props5.onChangeTodoTasks;
+      onChangeTodoTasks(_toConsumableArray(todoTasks.filter(function (todo) {
+        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
+      })));
     });
 
     _this.state = {
       activeFilter: _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].ALL,
-      newTask: null,
-      todoTasks: _this.props.todoTasks
+      newTask: null
     };
     return _this;
   }
@@ -29272,10 +29270,10 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      var _this$state2 = this.state,
-          activeFilter = _this$state2.activeFilter,
-          newTask = _this$state2.newTask,
-          todoTasks = _this$state2.todoTasks;
+      var _this$state = this.state,
+          activeFilter = _this$state.activeFilter,
+          newTask = _this$state.newTask;
+      var todoTasks = this.props.todoTasks;
       var countOfActiveTasks = todoTasks.filter(function (todo) {
         return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
       }).length;
@@ -29306,7 +29304,7 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
         placeholder: "What needs to be done?",
         onKeyDown: this._handleNewTaskEnterDown,
         onChange: this._handleNewTaskChange,
-        value: newTask ? newTask.task : ""
+        value: newTask ? newTask.description : ""
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todolist__WEBPACK_IMPORTED_MODULE_3__["default"], {
         todoTasks: tasksOfActiveFilter,
         onTaskChange: this._handleTaskChange,
@@ -29475,8 +29473,6 @@ var TodoState;
   TodoState[TodoState["Read"] = 1] = "Read";
 })(TodoState || (TodoState = {}));
 
-;
-
 var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(TodoItem, _React$PureComponent);
 
@@ -29503,7 +29499,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
       onTaskChange(newTask);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "_handleTaskTextChange", function (evt) {
+    _defineProperty(_assertThisInitialized(_this), "_handleTaskDescriptionChange", function (evt) {
       _this.setState({
         currentTask: evt.target.value
       });
@@ -29523,7 +29519,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
 
       if (isEnterKey) {
         newCurrentTask = _objectSpread(_objectSpread({}, todo), {}, {
-          task: _this.state.currentTask
+          description: _this.state.currentTask
         });
       }
 
@@ -29532,7 +29528,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
 
         _this.setState({
           currentState: TodoState.Read,
-          currentTask: newCurrentTask.task
+          currentTask: newCurrentTask.description
         });
       }
     });
@@ -29552,7 +29548,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
 
     _this.state = {
       currentState: TodoState.Read,
-      currentTask: _this.props.todo.task
+      currentTask: _this.props.todo.description
     };
     return _this;
   }
@@ -29569,7 +29565,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
       }, currentState === TodoState.Edit ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
         className: "edit-task",
         type: "text",
-        onChange: this._handleTaskTextChange,
+        onChange: this._handleTaskDescriptionChange,
         value: currentTask,
         onKeyDown: this._handleTaskKeyDown
       })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
@@ -29580,7 +29576,7 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
         className: "".concat(todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed ? "label-field-completed" : "label-field"),
         onDoubleClick: this._handleDoubleClickOnTask
-      }, todo.task), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
+      }, todo.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
         className: "delete-button",
         onClick: this._handleDeleteButtonClick
       }, "\xD7")));
@@ -29611,7 +29607,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-;
 
 var TodoList = function TodoList(props) {
   var todoTasks = props.todoTasks,
@@ -29666,11 +29661,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/app */ "./src/components/app.tsx");
 /* harmony import */ var _mock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mock */ "./src/mock.ts");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
+
+
+var Index = /*#__PURE__*/function (_React$PureComponent) {
+  _inherits(Index, _React$PureComponent);
+
+  var _super = _createSuper(Index);
+
+  function Index(props) {
+    var _this;
+
+    _classCallCheck(this, Index);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "onChangeTodoTasks", function (newTasks) {
+      _this.setState({
+        todoTasks: newTasks
+      });
+    });
+
+    _this.state = {
+      todoTasks: _this.props.todoTasks
+    };
+    return _this;
+  }
+
+  _createClass(Index, [{
+    key: "render",
+    value: function render() {
+      var todoTasks = this.state.todoTasks;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        todoTasks: todoTasks,
+        onChangeTodoTasks: this.onChangeTodoTasks
+      });
+    }
+  }]);
+
+  return Index;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Index, {
   todoTasks: _mock__WEBPACK_IMPORTED_MODULE_3__["todoTasks"]
 }), document.querySelector("#root"));
 
@@ -29690,19 +29748,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var todoTasks = [{
   id: 0,
-  task: "First",
+  description: "First",
   status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Uncompleted
 }, {
   id: 1,
-  task: "Second",
+  description: "Second",
   status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Completed
 }, {
   id: 2,
-  task: "Third",
+  description: "Third",
   status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Uncompleted
 }, {
   id: 3,
-  task: "Fourth",
+  description: "Fourth",
   status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Completed
 }];
 

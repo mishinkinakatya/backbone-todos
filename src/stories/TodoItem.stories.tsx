@@ -12,7 +12,7 @@ export default {
 export const TodoItemPage = () => <TodoItem
     todo={{
         id: 0,
-        task: `First`,
+        description: `First`,
         status: TaskStatus.Uncompleted
     }}
     onTaskChange={action("onTaskChange")}
@@ -22,7 +22,7 @@ export const TodoItemPage = () => <TodoItem
 export const CompletedTodoItems = () =>  <TodoItem
     todo={{
         id: 0,
-        task: `First`,
+        description: `First`,
         status: TaskStatus.Completed
     }}
     onTaskChange={action("onTaskChange")}
