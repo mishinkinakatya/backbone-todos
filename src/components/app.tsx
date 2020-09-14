@@ -74,8 +74,7 @@ class App extends React.PureComponent<AppProps, AppState> {
         const isAllChecked = todoTasks.every((task) => task.status === TaskStatus.Completed);
 
         const changeTaskStatus = (todo: Task) => {
-            const taskWithNewStatus = isAllChecked ?
-                {
+            return isAllChecked ? {
                     ...todo,
                     status: TaskStatus.Uncompleted,
                 } :
@@ -83,7 +82,6 @@ class App extends React.PureComponent<AppProps, AppState> {
                     ...todo,
                     status: TaskStatus.Completed,
                 }
-            return taskWithNewStatus;
         }
         onChangeTodoTasks(todoTasks.map((todo) => changeTaskStatus(todo)));
     }

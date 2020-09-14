@@ -37,7 +37,6 @@ class Index extends React.PureComponent<IndexProps, IndexState> {
             todoTasks: newTasks,
         })
     }
-
 }
 
 ReactDOM.render(

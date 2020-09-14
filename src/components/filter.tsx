@@ -6,8 +6,7 @@ import '../style/filter.css';
 export interface FilterProps {
     activeFilter: string,
     onFilterClick: (status: string) =>  void,
-};
-
+}
 
 const Filter: React.FC<FilterProps> = (props) => {
     const {activeFilter, onFilterClick} = props;
