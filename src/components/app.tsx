@@ -29,7 +29,7 @@ class App extends React.PureComponent<AppProps, AppState> {
         };
     }
 
-    render() {
+    render(): JSX.Element {
         const {activeFilter, newTask} = this.state;
         const {todoTasks} = this.props
 
@@ -68,7 +68,7 @@ class App extends React.PureComponent<AppProps, AppState> {
     }
 
     // NewTask
-    _handleCheckedAllTasks = () => {
+    _handleCheckedAllTasks = (): void => {
         const {todoTasks, onChangeTodoTasks} = this.props;
 
         const isAllChecked = todoTasks.every((task) => task.status === TaskStatus.Completed);
@@ -86,7 +86,7 @@ class App extends React.PureComponent<AppProps, AppState> {
         onChangeTodoTasks(todoTasks.map((todo) => changeTaskStatus(todo)));
     }
 
-    _handleNewTaskChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    _handleNewTaskChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
         const {todoTasks} = this.props;
 
         this.setState({
@@ -98,7 +98,7 @@ class App extends React.PureComponent<AppProps, AppState> {
         });
     }
 
-    _handleNewTaskEnterDown = (evt: React.KeyboardEvent) => {
+    _handleNewTaskEnterDown = (evt: React.KeyboardEvent): void => {
         const {newTask} = this.state;
         const {todoTasks, onChangeTodoTasks} = this.props;
 
@@ -111,7 +111,7 @@ class App extends React.PureComponent<AppProps, AppState> {
     }
 
     // TaskList
-    _handleTaskChange = (newTask: Task) => {
+    _handleTaskChange = (newTask: Task): void => {
         const {todoTasks, onChangeTodoTasks} = this.props;
 
         const todoIndex = todoTasks.findIndex((todoTask) => todoTask.id === newTask.id);
@@ -119,7 +119,7 @@ class App extends React.PureComponent<AppProps, AppState> {
         onChangeTodoTasks([...todoTasks.slice(0, todoIndex), newTask, ...todoTasks.slice(todoIndex + 1)]);
     }
 
-    _handleTaskDelete = (task: Task) => {
+    _handleTaskDelete = (task: Task): void => {
         const {todoTasks, onChangeTodoTasks} = this.props;
 
         const todoIndex = todoTasks.findIndex((todoTask) => todoTask.id === task.id);
@@ -128,11 +128,11 @@ class App extends React.PureComponent<AppProps, AppState> {
     }
 
     // Footer
-    _handleFilterClick = (filterName: string) => {
+    _handleFilterClick = (filterName: string): void => {
         this.setState({activeFilter: filterName});
     }
 
-    _handleClearCompletedClick = () => {
+    _handleClearCompletedClick = (): void => {
         const {todoTasks, onChangeTodoTasks} = this.props;
 
         onChangeTodoTasks([...todoTasks.filter((todo) => todo.status === TaskStatus.Uncompleted)]);

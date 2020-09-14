@@ -31,7 +31,7 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         };
     }
 
-    render() {
+    render(): JSX.Element {
         const {todo} = this.props;
         const {currentState, currentTask} = this.state;
 
@@ -61,7 +61,7 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         )
     }
 
-    _handleTaskStatusChange = () => {
+    _handleTaskStatusChange = (): void => {
         const {todo, onTaskChange} = this.props;
 
         const newTask = {
@@ -72,11 +72,11 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         onTaskChange(newTask);
     }
 
-    _handleTaskDescriptionChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    _handleTaskDescriptionChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
         this.setState({currentTask: evt.target.value});
     }
 
-    _handleTaskKeyDown = (evt: React.KeyboardEvent) => {
+    _handleTaskKeyDown = (evt: React.KeyboardEvent): void => {
         const {todo, onTaskChange} = this.props;
 
         const isEnterKey: boolean = evt.key === `Enter`;
@@ -102,13 +102,13 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         }
     }
 
-    _handleDeleteButtonClick = () => {
+    _handleDeleteButtonClick = (): void => {
         const {todo, onTaskDelete} = this.props;
 
         onTaskDelete(todo);
     }
 
-    _handleDoubleClickOnTask = () => {
+    _handleDoubleClickOnTask = (): void => {
         this.setState({
             currentState: TodoState.Edit,
         });

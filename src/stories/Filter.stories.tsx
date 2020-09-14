@@ -8,17 +8,17 @@ import {action} from "@storybook/addon-actions";
 export default {title: 'Todo MVC/Filter'} as Meta;
 
 
-export const AllFilters = () => <Filter
+export const AllFilters = (): JSX.Element => <Filter
     activeFilter={FILTER_TYPE.ALL}
     onFilterClick={action("onFilterClick")}
 />
 
-export const ActiveFilters = () => <Filter
+export const ActiveFilters = (): JSX.Element => <Filter
     activeFilter={FILTER_TYPE.ACTIVE}
     onFilterClick={action("onFilterClick")}
 />
 
-export const CompletedFilters = () => <Filter
+export const CompletedFilters = (): JSX.Element => <Filter
     activeFilter={FILTER_TYPE.COMPLETED}
     onFilterClick={action("onFilterClick")}
 />

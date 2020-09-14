@@ -7,7 +7,7 @@ import {action} from "@storybook/addon-actions";
 
 export default {title: 'Todo MVC/App'} as Meta;
 
-export const AppPage = () => <App
+export const AppPage = (): JSX.Element => <App
     onChangeTodoTasks={action("onChangeTodoTasks")}
     todoTasks={
         [
@@ -25,7 +25,7 @@ export const AppPage = () => <App
     }
 />
 
-export const WithCompletedTasks = () => <App
+export const WithCompletedTasks = (): JSX.Element => <App
     onChangeTodoTasks={action("onChangeTodoTasks")}
     todoTasks={
         [
@@ -43,7 +43,7 @@ export const WithCompletedTasks = () => <App
     }
 />
 
-export const WithUnCompletedTasks = () => <App
+export const WithUnCompletedTasks = (): JSX.Element => <App
     onChangeTodoTasks={action("onChangeTodoTasks")}
     todoTasks={
         [

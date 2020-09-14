@@ -10,7 +10,7 @@ export interface TodoListProps {
     onTaskDelete: (todo: Task) => void,
 }
 
-const TodoList: React.FC<TodoListProps> = (props) => {
+const TodoList: React.FC<TodoListProps> = (props): JSX.Element => {
     const {todoTasks, onTaskChange, onTaskDelete} = props;
 
     return (

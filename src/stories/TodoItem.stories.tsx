@@ -9,7 +9,7 @@ export default {
     title: 'Todo MVC/TodoItem',
 } as Meta;
 
-export const TodoItemPage = () => <TodoItem
+export const TodoItemPage = (): JSX.Element => <TodoItem
     todo={{
         id: 0,
         description: `First`,
@@ -19,7 +19,7 @@ export const TodoItemPage = () => <TodoItem
     onTaskDelete={action("onTaskDelete")}
 />
 
-export const CompletedTodoItems = () =>  <TodoItem
+export const CompletedTodoItems = (): JSX.Element =>  <TodoItem
     todo={{
         id: 0,
         description: `First`,

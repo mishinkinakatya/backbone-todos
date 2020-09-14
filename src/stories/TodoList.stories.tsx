@@ -7,7 +7,7 @@ import {action} from "@storybook/addon-actions";
 
 export default {title: 'Todo MVC/TodoList'} as Meta;
 
-export const FullTodoList = () => <TodoList
+export const FullTodoList = (): JSX.Element => <TodoList
     onTaskDelete={action("onTaskDelete")}
     onTaskChange={action("onTaskChange")}
     todoTasks={
