@@ -1,6 +1,7 @@
 import * as React from "react";
 import {FILTER_TYPE} from "../const";
 import '../style/filter.css';
+import {act} from "react-dom/test-utils";
 
 
 export interface FilterProps {
@@ -13,11 +14,11 @@ const Filter: React.FC<FilterProps> = (props) => {
     const allStatus = Object.values(FILTER_TYPE);
 
     return (
-        <ul className="filter">
+        <ul className="filters">
             {allStatus.map((status) => {
                 return (
-                    <li key={status} className={status === activeFilter ? "filter-item-checked" : "filter-item"}>
-                        <a className="link" href="#" onClick={() => onFilterClick(status)}>{status}</a>
+                    <li key={status}>
+                        <a className={status === activeFilter ? `checked-filter` : ``} href="#" onClick={() => onFilterClick(status)}>{status}</a>
                     </li>
                 )
             })

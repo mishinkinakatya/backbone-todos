@@ -1,0 +1,68 @@
+body {
+    display: block;
+}
+
+.header {
+    text-align: center;
+}
+
+.workspace {
+    display: block;
+    margin: auto;
+    width: 550px;
+    border: gray solid 1px;
+}
+
+.new-task {
+    font: 20px Arial sans-serif;
+    display: block;
+    padding: 15px 5px 5px 5px;
+}
+
+.check-all-button {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    color: lightgray;
+    vertical-align: bottom;
+}
+
+.new-task-field {
+    font: 20px Arial sans-serif;
+    display: inline-block;
+    padding: 15px 15px 0 5px;
+    position: relative;
+    left: 10px;
+    border: none;
+    vertical-align: bottom;
+}
+
+.info-block {
+    display: block;
+    padding: 15px 15px 15px 5px;
+    position: relative;
+}
+
+.items-count {
+    font: 18px Arial sans-serif;
+    display: inline;
+    margin-left: 5px;
+    color: dimgray;
+    vertical-align: bottom;
+}
+
+.filters-block {
+    display: inline;
+    position: absolute;
+    left: 140px;
+    bottom: 54px;
+}
+
+.clear-button {
+    font: 18px Arial sans-serif;
+    display: inline;
+    position: absolute;
+    right: 10px;
+    color: dimgray;
+    vertical-align: bottom;
+}

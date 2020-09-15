@@ -2,7 +2,6 @@ import * as React from "react";
 import "../style/todoItem.css";
 import {Task, TaskStatus} from "./task";
 
-
 export interface TodoItemProps {
     todo: Task,
     onTaskChange: (todo: Task) => void,
@@ -38,23 +37,21 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         return (
             <li className="todo-item">
                 {currentState === TodoState.Edit
-                    ? <div>
-                        <input
-                            className="edit-task"
+                    ? <input
+                            className="todo-item-edit"
                             type="text"
                             onChange={this._handleTaskDescriptionChange}
                             value={currentTask}
                             onKeyDown={this._handleTaskKeyDown}
                         />
-                    </div>
                     :
-                    <div>
-                        <input className="check-button" type="checkbox" checked={todo.status === TaskStatus.Completed}
+                    <div className="todo-item-read">
+                        <input className="todo-item-check" type="checkbox" checked={todo.status === TaskStatus.Completed}
                                onChange={this._handleTaskStatusChange}/>
                         <label
-                            className={`${todo.status === TaskStatus.Completed ? `label-field-completed` : `label-field`}`}
+                            className={`${todo.status === TaskStatus.Completed ? `todo-item-label-completed` : `todo-item-label`}`}
                             onDoubleClick={this._handleDoubleClickOnTask}>{todo.description}</label>
-                        <button className="delete-button" onClick={this._handleDeleteButtonClick}>×</button>
+                        <button className="todo-item-delete" onClick={this._handleDeleteButtonClick}>×</button>
                     </div>
                 }
             </li>
@@ -88,9 +85,9 @@ class TodoItem extends React.PureComponent<TodoItemProps, TodoItemState> {
         }
         if (isEnterKey) {
             newCurrentTask = {
-                    ...todo,
+                ...todo,
                 description: this.state.currentTask,
-                };
+            };
         }
 
         if (newCurrentTask != undefined) {

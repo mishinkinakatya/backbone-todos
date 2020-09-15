@@ -1,5 +1,7 @@
 .footer {
-    color: darkgrey;
+    display: block;
+    position: absolute;
     text-align: center;
+    color: darkgrey;
     font-size: 12px;
 }

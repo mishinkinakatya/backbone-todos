@@ -1,26 +1,24 @@
-.filter {
-    display: inline-block;
-    list-style: none;
-    font: 14px Arial sans-serif;
+.filters {
+    font: 18px Arial sans-serif;
     text-align: center;
+    list-style: none;
+    position: absolute;
+    display: inline;
+    padding: 0;
 }
 
-.filter-item {
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
+.filters li {
+    display: inline;
 }
 
-.filter-item-checked {
-    list-style-type: none;
-    display: inline-block;
-    margin: 5px;
-    border: #333333 solid 1px;
-    padding: 1px 4px;
-    border-radius: 3px;
-}
-
-.link {
+.filters a {
     text-decoration: none;
-    color: #333333;
+    color: dimgray;
+    margin: 5px;
+    padding: 2px 10px;
+}
+
+.filters .checked-filter {
+    border: darkgrey solid 1px;
+    border-radius: 3px;
 }

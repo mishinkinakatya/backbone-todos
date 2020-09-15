@@ -86,28 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/style/app.css":
-/*!*****************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/style/app.css ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, "body {\r\n    display: block;\r\n    font-size: 20px;\r\n}\r\n\r\n.header {\r\n    text-align: center;\r\n}\r\n\r\n.workspace {\r\n    display: block;\r\n    margin: auto;\r\n    width: 550px;\r\n    border: gray solid 1px;\r\n}\r\n\r\n.new-task {\r\n    display: block;\r\n    width: 500px;\r\n    height: 55px;\r\n    font-size: 20px;\r\n}\r\n\r\n.check-all-button {\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.new-task-field {\r\n    display: inline-block;\r\n    width: 450px;\r\n    height: 31px;\r\n    position: relative;\r\n    left: 30px;\r\n    font-size: 20px;\r\n    padding-left: 10px;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.info-block {\r\n    display: block;\r\n    margin: auto;\r\n}\r\n\r\n.items-count {\r\n    display: inline-block;\r\n    width: 100px;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    margin-left: 5px;\r\n}\r\n\r\n.clear-button {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 140px;\r\n    font-size: 14px;\r\n    color: #333333;\r\n}", "",{"version":3,"sources":["webpack://src/style/app.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,YAAY;IACZ,YAAY;IACZ,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,YAAY;IACZ,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,qBAAqB;IACrB,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB,sBAAsB;AAC1B;;AAEA;IACI,qBAAqB;IACrB,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,UAAU;IACV,eAAe;IACf,kBAAkB;IAClB,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,YAAY;AAChB;;AAEA;IACI,qBAAqB;IACrB,YAAY;IACZ,eAAe;IACf,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,qBAAqB;IACrB,kBAAkB;IAClB,WAAW;IACX,eAAe;IACf,cAAc;AAClB","sourcesContent":["body {\r\n    display: block;\r\n    font-size: 20px;\r\n}\r\n\r\n.header {\r\n    text-align: center;\r\n}\r\n\r\n.workspace {\r\n    display: block;\r\n    margin: auto;\r\n    width: 550px;\r\n    border: gray solid 1px;\r\n}\r\n\r\n.new-task {\r\n    display: block;\r\n    width: 500px;\r\n    height: 55px;\r\n    font-size: 20px;\r\n}\r\n\r\n.check-all-button {\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.new-task-field {\r\n    display: inline-block;\r\n    width: 450px;\r\n    height: 31px;\r\n    position: relative;\r\n    left: 30px;\r\n    font-size: 20px;\r\n    padding-left: 10px;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.info-block {\r\n    display: block;\r\n    margin: auto;\r\n}\r\n\r\n.items-count {\r\n    display: inline-block;\r\n    width: 100px;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    margin-left: 5px;\r\n}\r\n\r\n.clear-button {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 140px;\r\n    font-size: 14px;\r\n    color: #333333;\r\n}"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style/filter.css":
 /*!********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style/filter.css ***!
@@ -123,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".filter {\r\n    display: inline-block;\r\n    list-style: none;\r\n    font: 14px Arial sans-serif;\r\n    text-align: center;\r\n}\r\n\r\n.filter-item {\r\n    display: inline-block;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.filter-item-checked {\r\n    list-style-type: none;\r\n    display: inline-block;\r\n    margin: 5px;\r\n    border: #333333 solid 1px;\r\n    padding: 1px 4px;\r\n    border-radius: 3px;\r\n}\r\n\r\n.link {\r\n    text-decoration: none;\r\n    color: #333333;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/style/filter.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,gBAAgB;IAChB,2BAA2B;IAC3B,kBAAkB;AACtB;;AAEA;IACI,qBAAqB;IACrB,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,qBAAqB;IACrB,qBAAqB;IACrB,WAAW;IACX,yBAAyB;IACzB,gBAAgB;IAChB,kBAAkB;AACtB;;AAEA;IACI,qBAAqB;IACrB,cAAc;AAClB","sourcesContent":[".filter {\r\n    display: inline-block;\r\n    list-style: none;\r\n    font: 14px Arial sans-serif;\r\n    text-align: center;\r\n}\r\n\r\n.filter-item {\r\n    display: inline-block;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.filter-item-checked {\r\n    list-style-type: none;\r\n    display: inline-block;\r\n    margin: 5px;\r\n    border: #333333 solid 1px;\r\n    padding: 1px 4px;\r\n    border-radius: 3px;\r\n}\r\n\r\n.link {\r\n    text-decoration: none;\r\n    color: #333333;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".filters {\r\n    font: 18px Arial sans-serif;\r\n    text-align: center;\r\n    list-style: none;\r\n    position: absolute;\r\n    display: inline;\r\n    padding: 0;\r\n}\r\n\r\n.filters li {\r\n    display: inline;\r\n}\r\n\r\n.filters a {\r\n    text-decoration: none;\r\n    color: dimgray;\r\n    margin: 5px;\r\n    padding: 2px 10px;\r\n}\r\n\r\n.filters .checked-filter {\r\n    border: darkgrey solid 1px;\r\n    border-radius: 3px;\r\n}", "",{"version":3,"sources":["webpack://src/style/filter.css"],"names":[],"mappings":"AAAA;IACI,2BAA2B;IAC3B,kBAAkB;IAClB,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,UAAU;AACd;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,qBAAqB;IACrB,cAAc;IACd,WAAW;IACX,iBAAiB;AACrB;;AAEA;IACI,0BAA0B;IAC1B,kBAAkB;AACtB","sourcesContent":[".filters {\r\n    font: 18px Arial sans-serif;\r\n    text-align: center;\r\n    list-style: none;\r\n    position: absolute;\r\n    display: inline;\r\n    padding: 0;\r\n}\r\n\r\n.filters li {\r\n    display: inline;\r\n}\r\n\r\n.filters a {\r\n    text-decoration: none;\r\n    color: dimgray;\r\n    margin: 5px;\r\n    padding: 2px 10px;\r\n}\r\n\r\n.filters .checked-filter {\r\n    border: darkgrey solid 1px;\r\n    border-radius: 3px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -145,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".footer {\r\n    color: darkgrey;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/style/footer.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,kBAAkB;IAClB,eAAe;AACnB","sourcesContent":[".footer {\r\n    color: darkgrey;\r\n    text-align: center;\r\n    font-size: 12px;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".footer {\r\n    display: block;\r\n    position: absolute;\r\n    text-align: center;\r\n    color: darkgrey;\r\n    font-size: 12px;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/style/footer.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,kBAAkB;IAClB,kBAAkB;IAClB,eAAe;IACf,eAAe;AACnB","sourcesContent":[".footer {\r\n    display: block;\r\n    position: absolute;\r\n    text-align: center;\r\n    color: darkgrey;\r\n    font-size: 12px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -167,7 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".todo-item {\r\n    display: block;\r\n    width: auto;\r\n    height: 55px;\r\n    border-bottom: gray solid 1px;\r\n    list-style-type: none;\r\n    font-size: 20px;\r\n    position: relative;\r\n}\r\n\r\n.check-button {\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    border-radius: 100%;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.label-field {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 10px;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.label-field-completed {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 10px;\r\n    color: darkgrey;\r\n    text-decoration: line-through;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.delete-button {\r\n    display: inline-block;\r\n    position: absolute;\r\n    width: 20px;\r\n    height: 20px;\r\n    font-size: 20px;\r\n    right: 20px;\r\n    color: darksalmon;\r\n    border: none;\r\n    outline: none;\r\n    background-color: inherit;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.edit-task {\r\n    width: 470px;\r\n    height: 31px;\r\n    position: relative;\r\n    left: 15px;\r\n    border: darkgray solid 1px;\r\n    font-size: 20px;\r\n    padding-left: 10px;\r\n    vertical-align: bottom;\r\n}", "",{"version":3,"sources":["webpack://src/style/todoItem.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,WAAW;IACX,YAAY;IACZ,6BAA6B;IAC7B,qBAAqB;IACrB,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,qBAAqB;IACrB,WAAW;IACX,YAAY;IACZ,mBAAmB;IACnB,gBAAgB;IAChB,sBAAsB;AAC1B;;AAEA;IACI,qBAAqB;IACrB,kBAAkB;IAClB,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,qBAAqB;IACrB,kBAAkB;IAClB,UAAU;IACV,eAAe;IACf,6BAA6B;IAC7B,sBAAsB;AAC1B;;AAEA;IACI,qBAAqB;IACrB,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,eAAe;IACf,WAAW;IACX,iBAAiB;IACjB,YAAY;IACZ,aAAa;IACb,yBAAyB;IACzB,sBAAsB;AAC1B;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,UAAU;IACV,0BAA0B;IAC1B,eAAe;IACf,kBAAkB;IAClB,sBAAsB;AAC1B","sourcesContent":[".todo-item {\r\n    display: block;\r\n    width: auto;\r\n    height: 55px;\r\n    border-bottom: gray solid 1px;\r\n    list-style-type: none;\r\n    font-size: 20px;\r\n    position: relative;\r\n}\r\n\r\n.check-button {\r\n    display: inline-block;\r\n    width: 20px;\r\n    height: 20px;\r\n    border-radius: 100%;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.label-field {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 10px;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.label-field-completed {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 10px;\r\n    color: darkgrey;\r\n    text-decoration: line-through;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.delete-button {\r\n    display: inline-block;\r\n    position: absolute;\r\n    width: 20px;\r\n    height: 20px;\r\n    font-size: 20px;\r\n    right: 20px;\r\n    color: darksalmon;\r\n    border: none;\r\n    outline: none;\r\n    background-color: inherit;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.edit-task {\r\n    width: 470px;\r\n    height: 31px;\r\n    position: relative;\r\n    left: 15px;\r\n    border: darkgray solid 1px;\r\n    font-size: 20px;\r\n    padding-left: 10px;\r\n    vertical-align: bottom;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".todo-item {\r\n    font: 20px Arial sans-serif;\r\n    display: block;\r\n    border: lightgray solid 0;\r\n    border-bottom-width: 1px;\r\n    position: relative;\r\n    height: 60px;\r\n}\r\n\r\n.todo-item-edit {\r\n    font: 20px Arial sans-serif;\r\n    display: inline;\r\n    border: darkgray solid 1px;\r\n    height: auto;\r\n    padding: 18px;\r\n    position: relative;\r\n    left: 22px;\r\n}\r\n\r\n.todo-item-read {\r\n    font: 20px Arial sans-serif;\r\n    display: block;\r\n    padding: 15px 15px 15px 5px;\r\n}\r\n\r\n.todo-item-check {\r\n    display: inline;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.todo-item-label {\r\n    display: inline;\r\n    position: relative;\r\n    left: 10px;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.todo-item-label-completed {\r\n    display: inline;\r\n    position: relative;\r\n    left: 10px;\r\n    color: darkgrey;\r\n    text-decoration: line-through;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.todo-item-delete {\r\n    font-size: 20px;\r\n    display: inline;\r\n    position: absolute;\r\n    right: 10px;\r\n    color: darksalmon;\r\n    border: none;\r\n    outline: none;\r\n    background-color: inherit;\r\n    vertical-align: bottom;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/style/todoItem.css"],"names":[],"mappings":"AAAA;IACI,2BAA2B;IAC3B,cAAc;IACd,yBAAyB;IACzB,wBAAwB;IACxB,kBAAkB;IAClB,YAAY;AAChB;;AAEA;IACI,2BAA2B;IAC3B,eAAe;IACf,0BAA0B;IAC1B,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,UAAU;AACd;;AAEA;IACI,2BAA2B;IAC3B,cAAc;IACd,2BAA2B;AAC/B;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB,sBAAsB;AAC1B;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,UAAU;IACV,sBAAsB;AAC1B;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,UAAU;IACV,eAAe;IACf,6BAA6B;IAC7B,sBAAsB;AAC1B;;AAEA;IACI,eAAe;IACf,eAAe;IACf,kBAAkB;IAClB,WAAW;IACX,iBAAiB;IACjB,YAAY;IACZ,aAAa;IACb,yBAAyB;IACzB,sBAAsB;AAC1B","sourcesContent":[".todo-item {\r\n    font: 20px Arial sans-serif;\r\n    display: block;\r\n    border: lightgray solid 0;\r\n    border-bottom-width: 1px;\r\n    position: relative;\r\n    height: 60px;\r\n}\r\n\r\n.todo-item-edit {\r\n    font: 20px Arial sans-serif;\r\n    display: inline;\r\n    border: darkgray solid 1px;\r\n    height: auto;\r\n    padding: 18px;\r\n    position: relative;\r\n    left: 22px;\r\n}\r\n\r\n.todo-item-read {\r\n    font: 20px Arial sans-serif;\r\n    display: block;\r\n    padding: 15px 15px 15px 5px;\r\n}\r\n\r\n.todo-item-check {\r\n    display: inline;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.todo-item-label {\r\n    display: inline;\r\n    position: relative;\r\n    left: 10px;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.todo-item-label-completed {\r\n    display: inline;\r\n    position: relative;\r\n    left: 10px;\r\n    color: darkgrey;\r\n    text-decoration: line-through;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.todo-item-delete {\r\n    font-size: 20px;\r\n    display: inline;\r\n    position: absolute;\r\n    right: 10px;\r\n    color: darksalmon;\r\n    border: none;\r\n    outline: none;\r\n    background-color: inherit;\r\n    vertical-align: bottom;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -189,7 +167,29 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".todo-list {\r\n    display: block;\r\n    margin: auto;\r\n    list-style-type: none;\r\n    padding-left: 0;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/style/todolist.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,YAAY;IACZ,qBAAqB;IACrB,eAAe;AACnB","sourcesContent":[".todo-list {\r\n    display: block;\r\n    margin: auto;\r\n    list-style-type: none;\r\n    padding-left: 0;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".todo-list {\r\n    list-style-type: none;\r\n    padding-left: 0;\r\n    border: lightgray solid 1px;\r\n}\r\n", "",{"version":3,"sources":["webpack://src/style/todolist.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,eAAe;IACf,2BAA2B;AAC/B","sourcesContent":[".todo-list {\r\n    list-style-type: none;\r\n    padding-left: 0;\r\n    border: lightgray solid 1px;\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/style/workspace.css":
+/*!***********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/style/workspace.css ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "body {\r\n    display: block;\r\n}\r\n\r\n.header {\r\n    text-align: center;\r\n}\r\n\r\n.workspace {\r\n    display: block;\r\n    margin: auto;\r\n    width: 550px;\r\n    border: gray solid 1px;\r\n}\r\n\r\n.new-task {\r\n    font: 20px Arial sans-serif;\r\n    display: block;\r\n    padding: 15px 5px 5px 5px;\r\n}\r\n\r\n.check-all-button {\r\n    display: inline;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.new-task-field {\r\n    font: 20px Arial sans-serif;\r\n    display: inline-block;\r\n    padding: 15px 15px 0 5px;\r\n    position: relative;\r\n    left: 10px;\r\n    border: none;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.info-block {\r\n    display: block;\r\n    padding: 15px 15px 15px 5px;\r\n    position: relative;\r\n}\r\n\r\n.items-count {\r\n    font: 18px Arial sans-serif;\r\n    display: inline;\r\n    margin-left: 5px;\r\n    color: dimgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.filters-block {\r\n    display: inline;\r\n    position: absolute;\r\n    left: 140px;\r\n    bottom: 54px;\r\n}\r\n\r\n.clear-button {\r\n    font: 18px Arial sans-serif;\r\n    display: inline;\r\n    position: absolute;\r\n    right: 10px;\r\n    color: dimgray;\r\n    vertical-align: bottom;\r\n}", "",{"version":3,"sources":["webpack://src/style/workspace.css"],"names":[],"mappings":"AAAA;IACI,cAAc;AAClB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,YAAY;IACZ,YAAY;IACZ,sBAAsB;AAC1B;;AAEA;IACI,2BAA2B;IAC3B,cAAc;IACd,yBAAyB;AAC7B;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB,sBAAsB;AAC1B;;AAEA;IACI,2BAA2B;IAC3B,qBAAqB;IACrB,wBAAwB;IACxB,kBAAkB;IAClB,UAAU;IACV,YAAY;IACZ,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,2BAA2B;IAC3B,kBAAkB;AACtB;;AAEA;IACI,2BAA2B;IAC3B,eAAe;IACf,gBAAgB;IAChB,cAAc;IACd,sBAAsB;AAC1B;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,2BAA2B;IAC3B,eAAe;IACf,kBAAkB;IAClB,WAAW;IACX,cAAc;IACd,sBAAsB;AAC1B","sourcesContent":["body {\r\n    display: block;\r\n}\r\n\r\n.header {\r\n    text-align: center;\r\n}\r\n\r\n.workspace {\r\n    display: block;\r\n    margin: auto;\r\n    width: 550px;\r\n    border: gray solid 1px;\r\n}\r\n\r\n.new-task {\r\n    font: 20px Arial sans-serif;\r\n    display: block;\r\n    padding: 15px 5px 5px 5px;\r\n}\r\n\r\n.check-all-button {\r\n    display: inline;\r\n    width: 20px;\r\n    height: 20px;\r\n    color: lightgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.new-task-field {\r\n    font: 20px Arial sans-serif;\r\n    display: inline-block;\r\n    padding: 15px 15px 0 5px;\r\n    position: relative;\r\n    left: 10px;\r\n    border: none;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.info-block {\r\n    display: block;\r\n    padding: 15px 15px 15px 5px;\r\n    position: relative;\r\n}\r\n\r\n.items-count {\r\n    font: 18px Arial sans-serif;\r\n    display: inline;\r\n    margin-left: 5px;\r\n    color: dimgray;\r\n    vertical-align: bottom;\r\n}\r\n\r\n.filters-block {\r\n    display: inline;\r\n    position: absolute;\r\n    left: 140px;\r\n    bottom: 54px;\r\n}\r\n\r\n.clear-button {\r\n    font: 18px Arial sans-serif;\r\n    display: inline;\r\n    position: absolute;\r\n    right: 10px;\r\n    color: dimgray;\r\n    vertical-align: bottom;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -29107,30 +29107,10 @@ module.exports = function (list, options) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./src/components/footer.tsx");
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filter */ "./src/components/filter.tsx");
-/* harmony import */ var _todolist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todolist */ "./src/components/todolist.tsx");
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
-/* harmony import */ var _style_app_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../style/app.css */ "./src/style/app.css");
-/* harmony import */ var _style_app_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_app_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./task */ "./src/components/task.tsx");
+/* harmony import */ var _style_workspace_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../style/workspace.css */ "./src/style/workspace.css");
+/* harmony import */ var _style_workspace_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_workspace_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _workspace__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./workspace */ "./src/components/workspace.tsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -29158,10 +29138,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-
-
 var App = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(App, _React$PureComponent);
 
@@ -29174,94 +29150,14 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call(this, props);
 
-    _defineProperty(_assertThisInitialized(_this), "state", void 0);
-
-    _defineProperty(_assertThisInitialized(_this), "_handleCheckedAllTasks", function () {
-      var _this$props = _this.props,
-          todoTasks = _this$props.todoTasks,
-          onChangeTodoTasks = _this$props.onChangeTodoTasks;
-      var isAllChecked = todoTasks.every(function (task) {
-        return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
-      });
-
-      var changeTaskStatus = function changeTaskStatus(todo) {
-        return isAllChecked ? _objectSpread(_objectSpread({}, todo), {}, {
-          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
-        }) : _objectSpread(_objectSpread({}, todo), {}, {
-          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed
-        });
-      };
-
-      onChangeTodoTasks(todoTasks.map(function (todo) {
-        return changeTaskStatus(todo);
-      }));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "_handleNewTaskChange", function (evt) {
-      var todoTasks = _this.props.todoTasks;
-
+    _defineProperty(_assertThisInitialized(_this), "onChangeTodoTasks", function (newTasks) {
       _this.setState({
-        newTask: {
-          id: todoTasks.length + 1,
-          description: evt.target.value,
-          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
-        }
+        todoTasks: newTasks
       });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "_handleNewTaskEnterDown", function (evt) {
-      var newTask = _this.state.newTask;
-      var _this$props2 = _this.props,
-          todoTasks = _this$props2.todoTasks,
-          onChangeTodoTasks = _this$props2.onChangeTodoTasks;
-
-      if (evt.key === "Enter" && newTask !== null) {
-        onChangeTodoTasks([].concat(_toConsumableArray(todoTasks), [newTask]));
-
-        _this.setState({
-          newTask: null
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "_handleTaskChange", function (newTask) {
-      var _this$props3 = _this.props,
-          todoTasks = _this$props3.todoTasks,
-          onChangeTodoTasks = _this$props3.onChangeTodoTasks;
-      var todoIndex = todoTasks.findIndex(function (todoTask) {
-        return todoTask.id === newTask.id;
-      });
-      onChangeTodoTasks([].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1))));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "_handleTaskDelete", function (task) {
-      var _this$props4 = _this.props,
-          todoTasks = _this$props4.todoTasks,
-          onChangeTodoTasks = _this$props4.onChangeTodoTasks;
-      var todoIndex = todoTasks.findIndex(function (todoTask) {
-        return todoTask.id === task.id;
-      });
-      onChangeTodoTasks([].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), _toConsumableArray(todoTasks.slice(todoIndex + 1))));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "_handleFilterClick", function (filterName) {
-      _this.setState({
-        activeFilter: filterName
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "_handleClearCompletedClick", function () {
-      var _this$props5 = _this.props,
-          todoTasks = _this$props5.todoTasks,
-          onChangeTodoTasks = _this$props5.onChangeTodoTasks;
-      onChangeTodoTasks(_toConsumableArray(todoTasks.filter(function (todo) {
-        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
-      })));
     });
 
     _this.state = {
-      activeFilter: _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].ALL,
-      newTask: null
+      todoTasks: _this.props.todoTasks
     };
     return _this;
   }
@@ -29269,59 +29165,12 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          activeFilter = _this$state.activeFilter,
-          newTask = _this$state.newTask;
-      var todoTasks = this.props.todoTasks;
-      var countOfActiveTasks = todoTasks.filter(function (todo) {
-        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
-      }).length;
-      var tasksOfActiveFilter = activeFilter === _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].ACTIVE ? todoTasks.filter(function (todo) {
-        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
-      }) : activeFilter === _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].COMPLETED ? todoTasks.filter(function (todo) {
-        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
-      }) : todoTasks;
-      var isCompletedTasks = todoTasks.filter(function (todo) {
-        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
-      }).length > 0;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h1", {
-        className: "header"
-      }, "todos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-        className: "workspace"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("section", {
-        className: "new-task"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-        className: "check-all-button",
-        type: "checkbox",
-        checked: todoTasks.every(function (task) {
-          return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
-        }),
-        onChange: this._handleCheckedAllTasks
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-        className: "new-task-field",
-        type: "text",
-        placeholder: "What needs to be done?",
-        onKeyDown: this._handleNewTaskEnterDown,
-        onChange: this._handleNewTaskChange,
-        value: newTask ? newTask.description : ""
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todolist__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        todoTasks: tasksOfActiveFilter,
-        onTaskChange: this._handleTaskChange,
-        onTaskDelete: this._handleTaskDelete
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-        className: "info-block"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
-        className: "items-count"
-      }, countOfActiveTasks, " ", countOfActiveTasks === 1 ? "item" : "items", " left"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        activeFilter: activeFilter,
-        onFilterClick: this._handleFilterClick
-      }), isCompletedTasks ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
-        className: "clear-button",
-        href: "#",
-        onClick: this._handleClearCompletedClick
-      }, "Clear completed")) : "")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null));
-    } // NewTask
-
+      var todoTasks = this.state.todoTasks;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_workspace__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        todoTasks: todoTasks,
+        onChangeTodoTasks: this.onChangeTodoTasks
+      });
+    }
   }]);
 
   return App;
@@ -29354,13 +29203,12 @@ var Filter = function Filter(props) {
       onFilterClick = props.onFilterClick;
   var allStatus = Object.values(_const__WEBPACK_IMPORTED_MODULE_1__["FILTER_TYPE"]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
-    className: "filter"
+    className: "filters"
   }, allStatus.map(function (status) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
-      key: status,
-      className: status === activeFilter ? "filter-item-checked" : "filter-item"
+      key: status
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
-      className: "link",
+      className: status === activeFilter ? "checked-filter" : "",
       href: "#",
       onClick: function onClick() {
         return onFilterClick(status);
@@ -29560,22 +29408,24 @@ var TodoItem = /*#__PURE__*/function (_React$PureComponent) {
           currentTask = _this$state.currentTask;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
         className: "todo-item"
-      }, currentState === TodoState.Edit ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-        className: "edit-task",
+      }, currentState === TodoState.Edit ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+        className: "todo-item-edit",
         type: "text",
         onChange: this._handleTaskDescriptionChange,
         value: currentTask,
         onKeyDown: this._handleTaskKeyDown
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-        className: "check-button",
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+        className: "todo-item-read"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+        className: "todo-item-check",
         type: "checkbox",
         checked: todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed,
         onChange: this._handleTaskStatusChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", {
-        className: "".concat(todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed ? "label-field-completed" : "label-field"),
+        className: "".concat(todo.status === _task__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"].Completed ? "todo-item-label-completed" : "todo-item-label"),
         onDoubleClick: this._handleDoubleClickOnTask
       }, todo.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-        className: "delete-button",
+        className: "todo-item-delete",
         onClick: this._handleDeleteButtonClick
       }, "\xD7")));
     }
@@ -29626,6 +29476,243 @@ var TodoList = function TodoList(props) {
 
 /***/ }),
 
+/***/ "./src/components/workspace.tsx":
+/*!**************************************!*\
+  !*** ./src/components/workspace.tsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./src/components/footer.tsx");
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filter */ "./src/components/filter.tsx");
+/* harmony import */ var _todolist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./todolist */ "./src/components/todolist.tsx");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../const */ "./src/const.tsx");
+/* harmony import */ var _style_workspace_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../style/workspace.css */ "./src/style/workspace.css");
+/* harmony import */ var _style_workspace_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_workspace_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./task */ "./src/components/task.tsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+var Workspace = /*#__PURE__*/function (_React$PureComponent) {
+  _inherits(Workspace, _React$PureComponent);
+
+  var _super = _createSuper(Workspace);
+
+  function Workspace(props) {
+    var _this;
+
+    _classCallCheck(this, Workspace);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "state", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "_handleCheckedAllTasks", function () {
+      var _this$props = _this.props,
+          todoTasks = _this$props.todoTasks,
+          onChangeTodoTasks = _this$props.onChangeTodoTasks;
+      var isAllChecked = todoTasks.every(function (task) {
+        return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
+      });
+
+      var changeTaskStatus = function changeTaskStatus(todo) {
+        return isAllChecked ? _objectSpread(_objectSpread({}, todo), {}, {
+          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
+        }) : _objectSpread(_objectSpread({}, todo), {}, {
+          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed
+        });
+      };
+
+      onChangeTodoTasks(todoTasks.map(function (todo) {
+        return changeTaskStatus(todo);
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleNewTaskChange", function (evt) {
+      var todoTasks = _this.props.todoTasks;
+
+      _this.setState({
+        newTask: {
+          id: todoTasks.length + 1,
+          description: evt.target.value,
+          status: _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted
+        }
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleNewTaskEnterDown", function (evt) {
+      var newTask = _this.state.newTask;
+      var _this$props2 = _this.props,
+          todoTasks = _this$props2.todoTasks,
+          onChangeTodoTasks = _this$props2.onChangeTodoTasks;
+
+      if (evt.key === "Enter" && newTask !== null) {
+        onChangeTodoTasks([].concat(_toConsumableArray(todoTasks), [newTask]));
+
+        _this.setState({
+          newTask: null
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleTaskChange", function (newTask) {
+      var _this$props3 = _this.props,
+          todoTasks = _this$props3.todoTasks,
+          onChangeTodoTasks = _this$props3.onChangeTodoTasks;
+      var todoIndex = todoTasks.findIndex(function (todoTask) {
+        return todoTask.id === newTask.id;
+      });
+      onChangeTodoTasks([].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), [newTask], _toConsumableArray(todoTasks.slice(todoIndex + 1))));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleTaskDelete", function (task) {
+      var _this$props4 = _this.props,
+          todoTasks = _this$props4.todoTasks,
+          onChangeTodoTasks = _this$props4.onChangeTodoTasks;
+      var todoIndex = todoTasks.findIndex(function (todoTask) {
+        return todoTask.id === task.id;
+      });
+      onChangeTodoTasks([].concat(_toConsumableArray(todoTasks.slice(0, todoIndex)), _toConsumableArray(todoTasks.slice(todoIndex + 1))));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleFilterClick", function (filterName) {
+      _this.setState({
+        activeFilter: filterName
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "_handleClearCompletedClick", function () {
+      var _this$props5 = _this.props,
+          todoTasks = _this$props5.todoTasks,
+          onChangeTodoTasks = _this$props5.onChangeTodoTasks;
+      onChangeTodoTasks(_toConsumableArray(todoTasks.filter(function (todo) {
+        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
+      })));
+    });
+
+    _this.state = {
+      activeFilter: _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].ALL,
+      newTask: null
+    };
+    return _this;
+  }
+
+  _createClass(Workspace, [{
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          activeFilter = _this$state.activeFilter,
+          newTask = _this$state.newTask;
+      var todoTasks = this.props.todoTasks;
+      var countOfActiveTasks = todoTasks.filter(function (todo) {
+        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
+      }).length;
+      var tasksOfActiveFilter = activeFilter === _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].ACTIVE ? todoTasks.filter(function (todo) {
+        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Uncompleted;
+      }) : activeFilter === _const__WEBPACK_IMPORTED_MODULE_4__["FILTER_TYPE"].COMPLETED ? todoTasks.filter(function (todo) {
+        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
+      }) : todoTasks;
+      var isCompletedTasks = todoTasks.filter(function (todo) {
+        return todo.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
+      }).length > 0;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h1", {
+        className: "header"
+      }, "todos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+        className: "workspace"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+        className: "new-task"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+        className: "check-all-button",
+        type: "checkbox",
+        checked: todoTasks.every(function (task) {
+          return task.status === _task__WEBPACK_IMPORTED_MODULE_6__["TaskStatus"].Completed;
+        }),
+        onChange: this._handleCheckedAllTasks
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+        className: "new-task-field",
+        type: "text",
+        placeholder: "What needs to be done?",
+        onKeyDown: this._handleNewTaskEnterDown,
+        onChange: this._handleNewTaskChange,
+        value: newTask ? newTask.description : ""
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_todolist__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        todoTasks: tasksOfActiveFilter,
+        onTaskChange: this._handleTaskChange,
+        onTaskDelete: this._handleTaskDelete
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("section", {
+        className: "info-block"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+        className: "items-count"
+      }, countOfActiveTasks, " ", countOfActiveTasks === 1 ? "item" : "items", " left"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+        className: "filters-block"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_filter__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        activeFilter: activeFilter,
+        onFilterClick: this._handleFilterClick
+      })), isCompletedTasks ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", {
+        className: "clear-button",
+        href: "#",
+        onClick: this._handleClearCompletedClick
+      }, "Clear completed") : "")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    } // NewTask
+
+  }]);
+
+  return Workspace;
+}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Workspace);
+
+/***/ }),
+
 /***/ "./src/const.tsx":
 /*!***********************!*\
   !*** ./src/const.tsx ***!
@@ -29659,74 +29746,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/app */ "./src/components/app.tsx");
 /* harmony import */ var _mock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mock */ "./src/mock.ts");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-
-
-var Index = /*#__PURE__*/function (_React$PureComponent) {
-  _inherits(Index, _React$PureComponent);
-
-  var _super = _createSuper(Index);
-
-  function Index(props) {
-    var _this;
-
-    _classCallCheck(this, Index);
-
-    _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "onChangeTodoTasks", function (newTasks) {
-      _this.setState({
-        todoTasks: newTasks
-      });
-    });
-
-    _this.state = {
-      todoTasks: _this.props.todoTasks
-    };
-    return _this;
-  }
-
-  _createClass(Index, [{
-    key: "render",
-    value: function render() {
-      var todoTasks = this.state.todoTasks;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        todoTasks: todoTasks,
-        onChangeTodoTasks: this.onChangeTodoTasks
-      });
-    }
-  }]);
-
-  return Index;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Index, {
+react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
   todoTasks: _mock__WEBPACK_IMPORTED_MODULE_3__["todoTasks"]
 }), document.querySelector("#root"));
 
@@ -29761,35 +29785,6 @@ var todoTasks = [{
   description: "Fourth",
   status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Completed
 }];
-
-/***/ }),
-
-/***/ "./src/style/app.css":
-/*!***************************!*\
-  !*** ./src/style/app.css ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./app.css */ "./node_modules/css-loader/dist/cjs.js!./src/style/app.css");
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-
-
-module.exports = content.locals || {};
 
 /***/ }),
 
@@ -29889,6 +29884,35 @@ module.exports = content.locals || {};
 
 var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
             var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./todolist.css */ "./node_modules/css-loader/dist/cjs.js!./src/style/todolist.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
+
+/***/ }),
+
+/***/ "./src/style/workspace.css":
+/*!*********************************!*\
+  !*** ./src/style/workspace.css ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./workspace.css */ "./node_modules/css-loader/dist/cjs.js!./src/style/workspace.css");
 
             content = content.__esModule ? content.default : content;
 

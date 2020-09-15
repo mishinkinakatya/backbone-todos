@@ -1,6 +1,5 @@
 .todo-list {
-    display: block;
-    margin: auto;
     list-style-type: none;
     padding-left: 0;
+    border: lightgray solid 1px;
 }
