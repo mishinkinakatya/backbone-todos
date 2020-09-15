@@ -1,9 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import App from "./components/app";
-import {todoTasks} from "./mock";
+import {getApi} from "./api";
 
+const api = getApi();
 
-ReactDOM.render(
-    <App todoTasks={todoTasks}/>,
-    document.querySelector(`#root`));
+api.getTodoTasks()
+    .then((response) => ReactDOM.render(
+            <App api={api} todoTasks={response}/>,
+            document.querySelector(`#root`))
+    )

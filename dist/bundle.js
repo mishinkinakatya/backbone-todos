@@ -29096,6 +29096,102 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./src/api.ts":
+/*!********************!*\
+  !*** ./src/api.ts ***!
+  \********************/
+/*! exports provided: getApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getApi", function() { return getApi; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var COMMON_URL = "https://api.jsonbin.io/b/5f60b137ad23b57ef9129c5d";
+var Method = {
+  GET: "GET",
+  POST: "POST",
+  PUT: "PUT"
+};
+var StatusCode = {
+  OK: 200,
+  REDIRECT: 300
+};
+var AUTHORIZATION = "$2b$10$BFuLsjA6WpghS80jECfxSeEZ6gNROexwOvtRj.RmraPBSoEhQ4MP6";
+
+var checkStatus = function checkStatus(response) {
+  if (response.status >= StatusCode.OK && response.status < StatusCode.REDIRECT) {
+    return response;
+  }
+
+  throw new Error("".concat(response.status, ": ").concat(response.statusText));
+};
+
+var API = /*#__PURE__*/function () {
+  function API(authorization) {
+    _classCallCheck(this, API);
+
+    this._authorization = authorization;
+  }
+
+  _createClass(API, [{
+    key: "getTodoTasks",
+    value: function getTodoTasks() {
+      return this._load({
+        baseUrl: "".concat(COMMON_URL, "/latest"),
+        method: Method.GET
+      }).then(function (response) {
+        return response.json();
+      });
+    }
+  }, {
+    key: "updateTodoTasks",
+    value: function updateTodoTasks(todoTasks) {
+      return this._load({
+        baseUrl: COMMON_URL,
+        method: Method.PUT,
+        body: JSON.stringify(todoTasks),
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
+      });
+    }
+  }, {
+    key: "_load",
+    value: function _load(_ref) {
+      var baseUrl = _ref.baseUrl,
+          _ref$method = _ref.method,
+          method = _ref$method === void 0 ? Method.GET : _ref$method,
+          _ref$body = _ref.body,
+          body = _ref$body === void 0 ? null : _ref$body,
+          _ref$headers = _ref.headers,
+          headers = _ref$headers === void 0 ? new Headers() : _ref$headers;
+      headers.append("secret-key", this._authorization);
+      headers.append("versioning", false);
+      return fetch("".concat(baseUrl), {
+        method: method,
+        body: body,
+        headers: headers
+      }).then(checkStatus)["catch"](function (err) {
+        throw err;
+      });
+    }
+  }]);
+
+  return API;
+}();
+
+var getApi = function getApi() {
+  return new API(AUTHORIZATION);
+};
+
+/***/ }),
+
 /***/ "./src/components/app.tsx":
 /*!********************************!*\
   !*** ./src/components/app.tsx ***!
@@ -29154,6 +29250,8 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
       _this.setState({
         todoTasks: newTasks
       });
+
+      _this.props.api.updateTodoTasks(newTasks);
     });
 
     _this.state = {
@@ -29166,10 +29264,10 @@ var App = /*#__PURE__*/function (_React$PureComponent) {
     key: "render",
     value: function render() {
       var todoTasks = this.state.todoTasks;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_workspace__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return todoTasks ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_workspace__WEBPACK_IMPORTED_MODULE_2__["default"], {
         todoTasks: todoTasks,
         onChangeTodoTasks: this.onChangeTodoTasks
-      });
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "Ooops");
     }
   }]);
 
@@ -29745,46 +29843,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/app */ "./src/components/app.tsx");
-/* harmony import */ var _mock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mock */ "./src/mock.ts");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api */ "./src/api.ts");
 
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  todoTasks: _mock__WEBPACK_IMPORTED_MODULE_3__["todoTasks"]
-}), document.querySelector("#root"));
-
-/***/ }),
-
-/***/ "./src/mock.ts":
-/*!*********************!*\
-  !*** ./src/mock.ts ***!
-  \*********************/
-/*! exports provided: todoTasks */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "todoTasks", function() { return todoTasks; });
-/* harmony import */ var _components_task__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/task */ "./src/components/task.tsx");
-
-var todoTasks = [{
-  id: 0,
-  description: "First",
-  status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Uncompleted
-}, {
-  id: 1,
-  description: "Second",
-  status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Completed
-}, {
-  id: 2,
-  description: "Third",
-  status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Uncompleted
-}, {
-  id: 3,
-  description: "Fourth",
-  status: _components_task__WEBPACK_IMPORTED_MODULE_0__["TaskStatus"].Completed
-}];
+var api = Object(_api__WEBPACK_IMPORTED_MODULE_3__["getApi"])();
+api.getTodoTasks().then(function (response) {
+  return react_dom__WEBPACK_IMPORTED_MODULE_1__["render"]( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_components_app__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    api: api,
+    todoTasks: response
+  }), document.querySelector("#root"));
+});
 
 /***/ }),
 

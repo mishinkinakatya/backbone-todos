@@ -1,7 +1,6 @@
 import * as React from "react";
 import {FILTER_TYPE} from "../const";
 import '../style/filter.css';
-import {act} from "react-dom/test-utils";
 
 
 export interface FilterProps {

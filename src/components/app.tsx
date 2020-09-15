@@ -5,6 +5,7 @@ import Workspace from "./workspace";
 
 export interface AppProps {
     todoTasks: Task[],
+    api: object,
 }
 
 interface AppState {
@@ -23,18 +24,20 @@ class App extends React.PureComponent<AppProps, AppState> {
     render(): JSX.Element {
         const {todoTasks} = this.state;
 
-        return (
-            <Workspace
+        return todoTasks
+            ? <Workspace
                 todoTasks={todoTasks}
                 onChangeTodoTasks={this.onChangeTodoTasks}
             />
-        );
+            : <p>Ooops</p>;
     }
 
     onChangeTodoTasks = (newTasks: Task[]): void => {
         this.setState({
-            todoTasks: newTasks,
+            todoTasks: newTasks
         })
+
+        this.props.api.updateTodoTasks(newTasks);
     }
 }
 
